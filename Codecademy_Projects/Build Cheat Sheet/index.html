@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Magic Codex - CSS</title>
+<link href="./Resources/CSS/styles.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <ul class="TitleBox">
+            <h1>CSS Properties Cheat Sheet</h1>
+            <hr>
+        </ul>
+        <h2>Purpose Of CSS</h2>
+        <p>CSS, or Cascading Style Sheets, is a language that is used in combination with HTML that customizes how HTML elements will appear. CSS can define styles and change the layout and design of a sheet.</p>
+
+        <table>
+            <thead> <!--Because this is a heading, we add this code-->
+                <tr> <!-- Row 1 - Row Titles (Tag, name, description)-->
+                    <th scope="col">Tag</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Illustration</th>
+                </tr>
+            </thead>
+            <tbody> <!--Since we have a head, we now have a body too-->
+                <tr> <!--Row 2 - Class Selectors (Tag, name, description)-->
+                    <td>.calendar-cell</td>
+                    <td>Class selectors</td>
+                    <td>Matches elements based on the contents of their class attribute. For selecting elements having calendar-cell as the value of the class attribute, a . needs to be prepended.</td>
+                    <td><img src="Resources/images/classselector.png"></td>
+                </tr>
+                <tr> <!--Row 3 ID Selectors (Tag, name, description)-->
+                    <td>#job-title</td>
+                    <td>ID Selectors</td>
+                    <td>Matches elements based on the contents of their id attribute. The values of id attribute should be unique in the entire DOM. For selecting the element having job-title as the value of the id attribute, a # needs to be prepended.</td>
+                    <td><img src="Resources/images/idselector.png"></td>
+                </tr>
+                <tr> <!--Row 4 Type Selectors (Tag, name, description)-->
+                    <td>p</td>
+                    <td>Type Selectors</td>
+                    <td>Used to match all elements of a given type or tag name.</td>
+                    <td><img src="./Resources/images/typeselector.png"></td>
+                </tr>
+                <tr> <!--Row 5 Group Selectors (Tag, name, description)-->
+                    <td>h1, h2 {}</td>
+                    <td>Group Selectors</td>
+                    <td>Match multiple selectors to the same CSS rule, using a comma-separated list. In this example, the text for both h1 and h2 is set to red.</td>
+                    <td><img src="./Resources/images/groupselector.png"></td>
+                </tr>
+               <tr> <!--Row 6 Descendant Selector (tag, name, description)-->
+                <td>div p</td>
+                <td> Descendant Selector</td>
+                <td>Used to match elements that are descended from another matched selector. They are denoted by a single space between each selector and the descended selector. All matching elements are selected regardless of the nesting level in the HTML.</td>
+                <td><img src="./Resources/images/descendantselector.png"></td>
+               </tr>
+               <tr> <!--Row 7 Chaining Selectors (tag, name, description)-->
+                <td>h1#header {}</td>
+                <td>Selector Specificity</td>
+                <td>Specificity is a ranking system that is used when there are multiple conflicting property values that point to the same element. When determining which rule to apply, the selector with the highest specificity wins out. The most specific selector type is the ID selector, followed by class selectors, followed by type selectors. In this example, only color: blue will be implemented as it has an ID selector whereas color: red has a type selector.</td>
+                <td><img src="./Resources/images/selectorspecificity.png"></td>
+               </tr>
+            </tbody>
+            <tfoot> <!--This a table footer-->
+                <tr> <!--Row 8 Link Element (Tag, name, description)-->
+                    <td>&lt;link&gt;</td>
+                    <td>Link Element</td>
+                    <td>The <link> element connects HTML documents to external resources, such as CSS files, using the href attribute to specify the URL, the rel attribute to define the relationship between the documents, and the type attribute to indicate the content type..<br> It's presented as such :<br>
+                        <strong>&lt;link href="./path/folder/style.css" rel="stylesheet" type="text/css"&gt;</strong></td>
+                        <td><img src="./Resources/images/link.png"></td>
+                        <hr>
+                </tr>
+            </tfoot>
+        </table>
+        <footer>
+           <p id="footer">A personal Cheat Sheet by Gamal Jastram</p>
+        </footer>
+    </body>
+</html>

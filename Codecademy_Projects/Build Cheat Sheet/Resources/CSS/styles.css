@@ -1,0 +1,84 @@
+body {
+    background-image: url(./Abstract.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+      }
+
+h1 {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+h2{
+    color: white;
+    padding: 25px;
+    margin-bottom: 0;
+}
+
+p {
+    width: 300px;
+    color: white;
+    padding: 25px;
+    border: 2px solid black;
+    background-color: midnightblue;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 2);
+}
+/* This part edits the box where the h1 title is */
+.TitleBox{
+    box-sizing : border-box; 
+    overflow: auto;
+    padding: 18px 50px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Table */
+
+table { /*This builds the inner structure of our table*/
+    height: 40%;
+    left: 10%;
+    margin: 20px auto;
+    overflow-y: scroll;
+    position: static;
+    width: 80%;
+    background-color: black
+}
+
+thead th { /* This edits the head of our table*/
+    background: OrangeRed;
+    color: black;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+tr { /* This edits the insides of our table*/
+    background: yellowgreen;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+}
+
+th, td { /* This edits both heading and inner table dimensions and font settings*/
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 20px;
+    text-align: center;
+    width: 33.3333%;
+}
+#footer {
+    background-color: indigo;
+    margin: auto;
+}
