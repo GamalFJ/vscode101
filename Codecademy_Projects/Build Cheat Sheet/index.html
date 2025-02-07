@@ -61,13 +61,50 @@
                 <td>Specificity is a ranking system that is used when there are multiple conflicting property values that point to the same element. When determining which rule to apply, the selector with the highest specificity wins out. The most specific selector type is the ID selector, followed by class selectors, followed by type selectors. In this example, only color: blue will be implemented as it has an ID selector whereas color: red has a type selector.</td>
                 <td><img src="./Resources/images/selectorspecificity.png"></td>
                </tr>
+               <tr> <!--Row 8 Making Links Blue and Underlined (tag, name, description) -->
+                <td>color: blue;<br>
+  text-decoration: underline;</td>
+                <td>Link Color & Text Decoration</td>
+                <td>This CSS code makes your link(s) blue and underlined</td>
+                <td><img src="./Resources/images/linkcolorunderline.png"></td>
+               </tr>
+               <tr> <!-- Row 9 Changing color of link anchor text when hovered over (tag, name, description, illustration)-->
+                <td>a { <br>
+                    color: blue;<br>
+                } <br>
+                  
+                  a:hover { <br>
+                    color: orange;<br>
+                  }
+                  </td>
+                <td>Changing color of link anchor text when hovered over</td>
+                <td>To change the color of link anchor from blue to orange (example) when a user hovers over it. <br> P.S : Two separate selectors, but work together.</td>
+                <td><img src="./Resources/images/linkhover.png"</td>
+               </tr>
+               <tr> <!--Row 10 Cursor Pointer (tag, name, description, illustration)-->
+                <td>a {<br>
+                    cursor: pointer;<br>
+                  }
+                <td>Cursor Pointer</td>
+                <td>In addition to any style changes when hovering over a link, the user's cursor should change from the default appearance to a pointing hand</td>
+                <td><img src="./Resources/images/linkcursorpointer.png"</td>
+               </tr>
+               <tr> <!--Row 11 Link State Ordering (tag, name, description, Illustration)-->
+                <td>:link<br>
+                    :visited<br> 
+                    :hover<br>
+                    :active</td>
+                <td>Link State Ordering</td>
+                <td>The ordering of link state pseudo-class rules is important to reveal the proper information. When a user hovers and then clicks a link, those styles should always override the styling surrounding a user's history with the link.<br> <strong>(unvisited :link and :visited)</strong><br> This ordering will ensure that the rules cascade properly and the user can receive the most applicable visual feedback about the state of the link.
+                </td>
+                <td><img src="./Resources/images/linkstateordering.png"</td>
+               </tr>
             </tbody>
             <tfoot> <!--This a table footer-->
-                <tr> <!--Row 8 Link Element (Tag, name, description)-->
+                <tr> <!--Link Element (Tag, name, description)-->
                     <td>&lt;link&gt;</td>
                     <td>Link Element</td>
-                    <td>The <link> element connects HTML documents to external resources, such as CSS files, using the href attribute to specify the URL, the rel attribute to define the relationship between the documents, and the type attribute to indicate the content type..<br> It's presented as such :<br>
-                        <strong>&lt;link href="./path/folder/style.css" rel="stylesheet" type="text/css"&gt;</strong></td>
+                    <td>The <link> element connects HTML documents to external resources, such as CSS files, using the href attribute to specify the URL, the rel attribute to define the relationship between the documents, and the type attribute to indicate the content type.</td>
                         <td><img src="./Resources/images/link.png"></td>
                         <hr>
                 </tr>
