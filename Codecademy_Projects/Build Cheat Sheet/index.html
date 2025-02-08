@@ -79,7 +79,7 @@
                   </td>
                 <td>Changing color of link anchor text when hovered over</td>
                 <td>To change the color of link anchor from blue to orange (example) when a user hovers over it. <br> P.S : Two separate selectors, but work together.</td>
-                <td><img src="./Resources/images/linkhover.png"</td>
+                <td><img src="./Resources/images/linkhover.png"></td>
                </tr>
                <tr> <!--Row 10 Cursor Pointer (tag, name, description, illustration)-->
                 <td>a {<br>
@@ -87,7 +87,7 @@
                   }
                 <td>Cursor Pointer</td>
                 <td>In addition to any style changes when hovering over a link, the user's cursor should change from the default appearance to a pointing hand</td>
-                <td><img src="./Resources/images/linkcursorpointer.png"</td>
+                <td><img src="./Resources/images/linkcursorpointer.png"></td>
                </tr>
                <tr> <!--Row 11 Link State Ordering (tag, name, description, Illustration)-->
                 <td>:link<br>
@@ -97,7 +97,142 @@
                 <td>Link State Ordering</td>
                 <td>The ordering of link state pseudo-class rules is important to reveal the proper information. When a user hovers and then clicks a link, those styles should always override the styling surrounding a user's history with the link.<br> <strong>(unvisited :link and :visited)</strong><br> This ordering will ensure that the rules cascade properly and the user can receive the most applicable visual feedback about the state of the link.
                 </td>
-                <td><img src="./Resources/images/linkstateordering.png"</td>
+                <td><img src="./Resources/images/linkstateordering.png"></td>
+               </tr>
+               <tr> <!--Row 12 Generic Button Design (tag,Name, Description, Illustration)-->
+                <td>button {<br>
+                    height: 50px;<br>
+                    width: 200px;<br>
+                    cursor: pointer;<br>
+                    font-weight: 600;<br>
+                    font-size: 15px;<br>}</td>
+                <td>Generic Button Design</td>
+                <td>This is the CSS code for a generic button design. Feel free to play with it and adapt it to your own style and needs.</td>
+                <td><img src="./Resources/images/genericbuttondesign.png"></td>
+               </tr>
+               <tr> <!--Row 13 Generic Button Design Spatial Disposition (Tag, Name, Description, Illustration)-->
+                <td>.content {<br>
+                    width: 100%;<br>
+                    display: flex;<br>
+                    flex-direction: column;<br>
+                    align-items: center;<br>
+                    justify-content: space-around;<br>
+                    height: 400px;<br>
+                    font-family: 'Roboto', sans-serif;<br>}</td>
+                <td>Generic Button Design (Spatial Disposition)</td>
+                <td>This block of CSS code is to set a generic spatial disposition for a button so that it fits normaly with others</td>
+                <td><img src="./Resources/images/genericbuttondesignspace.png"></td>
+               </tr>
+               <tr> <!--Row 14 Skeuomorphic Button Design (tag, name, Description, Illustration)-->
+                <td>.skeuomorphic { <br>
+                    border: 2px solid #0c960c;<br>
+                    border-radius: 5px;<br>
+                    color: #F8F8F8;<br>
+                    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px -2px 2px rgba(255, 255, 255, 0.5) inset, 0 2px 2px rgba(255, 255, 255, 0.8) inset;<br>
+                    background: linear-gradient(#1D1, #0ebc0e);<br>
+                    text-shadow: 0 -2px #0c960c;<br>}
+                  </td>
+                <td>Skeuomorphic Button</td>
+                <td>CSS Class Selector block of code for a Skeuomorphic Button Design</td>
+                <td><img src="./Resources/images/skeuomorphicbutton.png"></td>
+               </tr>
+               <tr> <!--Row 15 Skeuomorphic Hover Design (tag, name, description, Illustration)-->
+                <td>.skeuomorphic:hover {<br>
+                    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;<br>
+                    background: #0ebc0e;<br>
+                    background: linear-gradient(#0ebc0e, #0c960c);<br>
+                    border-color: #064f06;<br> }</td>
+                <td>Skeuomorphic Hover Design</td>
+                <td>CSS Class Selector block of code to design the hover behavior of our skeuomorphic button</td>
+                <td><img src="./Resources/images/skeuomorphichover.png"></td>
+               </tr>
+               <tr> <!--Row 16 Skeuomorphic Active Button Design (tag, name, Description, Illustration)-->
+                <td>.skeuomorphic:active {<br>
+                    margin-top: 2px;<br>
+                    margin-bottom: -2px;<br>
+                    box-shadow: 0px 2px 2px rgba(63, 63, 63, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;<br>
+                    background: #0c960c;<br>
+                    background: linear-gradient(#0c960c, #0ebc0e);<br>}</td>
+                <td>Skeuomorphic Active Button Design</td>
+                <td>CSS Class Selector block of code to design the active behavior of our skeuomorphic button</td>
+                <td><img src="./Resources/images/skeuomorphicactive.png"></td>
+               </tr>
+               <tr> <!--Row 17 Flat Button Design (tag, name, description, Illustration) -->
+                <td>.flat {<br>
+                    background-color: #1D1;<br>
+                    color: #fff;<br>
+                    border: 2px solid #12dd23;<br>
+                    border-radius: 10px;<br>}</td>
+                <td>Flat Button Design</td>
+                <td>CSS Class Selector block of code to design a Flat Button</td>
+                <td><img src="./Resources/images/flatbutton.png"></td>
+               </tr>
+               <tr> <!--Row 18 Flat Hover Button Design (tag, name, Description, Illustration)-->
+                <td>.flat:hover {<br>
+                    background-color: #0c960c;<br>
+                    transition: background-color .15s, font-size .15s;<br>
+                    font-size: 18px;<br>}</td>
+                <td>Flat Hover Button Design</td>
+                <td>CSS Class Selector block of code to design the hover state of a flat button</td>
+                <td><img src="./Resources/images/flathover.png"></td>
+               </tr>
+               <tr> <!--Row 19 Flat Active Design (tag, name, description, illustration)-->
+                <td>.flat:active {<br>
+                    border-color: #fff;<br>}</td>
+                <td>Flat Active Button Design</td>
+                <td>CSS Class Selector block of code to design the active state of a flat button</td>
+                <td><img src="./Resources/images/flatactive.png"></td>
+               </tr>
+               <tr> <!--Row 30 3-D button design (tag, name, description, Illustration)-->
+                <td>button {<br>
+                    padding: 5px;<br>
+                    border: 1px solid black;<br>
+                    border-radius: 5px;<br>
+                    text-decoration: none;<br>
+                    box-shadow: 0px 5px;<br>
+                  }<br>
+                  
+                  button:hover {<br>
+                    cursor: pointer;<br>
+                  }<br>
+                  
+                  button:active {<br>
+                    margin-top: 5px;<br>
+                    color: black;<br>
+                    box-shadow: 0px 0px;<br>}</td>
+                <td>3-D Bare Minimum Button</td>
+                <td>If using CSS rules, the use of hover and/or active states is important in order to model interaction with a real button. For example, to implement a bare minimum 3-D button design, the following CSS ruleset could be used</td>
+                <td><img src="./Resources/images/3dbuttonset.png"></td>
+               </tr>
+               <tr> <!--Row 21 Tooltips (tag, name, description, Illustration)-->
+                <td>Title="Insert text here"</td>
+                <td>Tooltip Attribute (HTML)</td>
+                <td>In an HTML file, you can add a tooltip attribute or a little bubble message in a link or button so that when hovered on it shows a message or at least let's the user know that it's clickable</td>
+                <td><img src="./Resources/images/tooltip.png"></td>
+               </tr>
+               <tr> <!--Row 22 Placing a p element inside a box using CSS (tag, name, description, Illustration)-->
+                <td>p {<br>
+                    width: 300px;<br>
+                    padding: 20px;<br>
+                    border: 2px solid black;<br>
+                    background-color: lightgray;<br>
+                    text-align: center;<br>
+                    border-radius: 10px;<br>
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);<br>}</td>
+                <td>P in a box</td>
+                <td>To place a p element inside a box using CSS</td>
+                <td><img src="./Resources/images/paragraphinsidebox.png"></td>
+               </tr>
+               <tr> <!--Row 23 Background-Image Optimization (tag, name, description, Illustration)-->
+                <td>body {<br>
+                    background-image: url('your-image.jpg');<br>
+                    background-size: cover;<br>
+                    background-position: center;<br>
+                    background-repeat: no-repeat;<br>
+                    background-attachment: fixed;<br>}</td>
+                <td>Background Image Optimization</td>
+                <td>To optimize your background image in every way possible</td>
+                <td><img src="./Resources/images/backgroundimageoptimization.png"></td>
                </tr>
             </tbody>
             <tfoot> <!--This a table footer-->
