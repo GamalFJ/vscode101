@@ -10,7 +10,7 @@ button {
     border-radius: 5px;
     box-shadow: 5px 5px 5px;
     font-family: Oldtown;
-    shadow-color: #422785;
+    border-color: #422785;
 }
 h1 {
     text-align: center;
