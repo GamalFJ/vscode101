@@ -1,0 +1,40 @@
+body {
+    padding: 20px;
+}
+.container {
+    background-image: url(./pattern.jpeg)
+}
+
+h1 {
+    text-align: center;
+    font-family: helvetica;
+    font-size: 100px;
+    font-weight: bold;
+    color: khaki;
+}
+h2 { 
+    font-family: Helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+item {
+    font-family: helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+#Brushes {
+    background-color: mediumspringgreen;
+}
+#Frames { 
+    background-color: lightcoral;
+}
+#Paint {
+    background-color: skyblue;
+}
+.price {
+    font-family: helvetica;
+    font-weight: bold;
+    color: blue;
+}

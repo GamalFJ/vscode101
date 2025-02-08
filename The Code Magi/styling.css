@@ -1,0 +1,58 @@
+body {
+    background-color: #8e20af;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    background-color:black;
+
+}
+    
+h2 {
+    font-family: comic sans ms;
+
+}
+
+button {
+    font-weight:750;
+    color:rgb(14, 0, 0);
+    background-color: black
+}
+
+a {
+    color: green;
+    font-family: comic sans ms;
+    background-color: black;
+    text-decoration: none;
+
+}
+
+a:link {
+    color: white;
+    background-color: green;
+}
+
+a:hover { 
+    color: blue;
+    background-color: yellow;
+}
+
+a:active {
+    color: yellow;
+    background-color: white;
+}
+
+input[type="text"], input[type="email"] {
+    border: 1px solid #FF9E03;
+    background-color:rgb(45, 14, 70);
+    color: rgb(224, 0, 0);
+
+}
+
+label {
+    font-weight: bold #FF9E03;
+    color: #FF9E03
+    
+}

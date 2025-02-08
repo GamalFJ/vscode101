@@ -1,0 +1,44 @@
+img {
+    border-radius: 75px;
+}
+h1 {
+    color: white;
+}
+h2 {
+    font-size: 18px;
+    color: chartreuse;
+}
+body {
+    background-color: midnightblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    color: white;
+    text-align: center;
+}
+a {
+    background-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 10px;
+    color: midnightblue;
+}
+#email {
+    background-color: darkgray;
+    border-radius: 5px;
+    border-style: outset;
+}
+#Subscription {
+    background-color: grey;
+    font-size:20px;
+    font-weight: bold;
+    border-radius: 100px;
+    border-style: double;
+    padding: 5px;
+    display: inline-box;
+    margin: 5px;
+    color: chartreuse;
+
+
+}
