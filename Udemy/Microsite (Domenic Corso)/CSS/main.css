@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    background: #333333;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700px;
+    font-style: normal;
+      }
+
+p {
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 20px 0;
+    color: white;
+
+}
+
+strong {
+    font-weight: bold;
+
+}
+/* Previous color was #1b4848 */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: normal;
+
+}
+
+.chapter {
+    font-weight : bold;
+    color: green;
+}
+
+.section {
+    width: 100%;
+    text-align: center;
+    background: #260443;
+
+}
+
+.section--dark {
+    background: #8c8b8c;
+    color: #ffffff;
+}
+
+.section__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.banner__logo {
+    height: 50px;
+    display: block;
+}
+
+#hero {
+    background: url(../images/GroveNew.png);
+    background-size: cover;
+
+}
+
+.ctabox {
+    margin: 100px 0;
+    max-width: 500px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.ctabox__heading {
+    color: #ffffff;
+    font-size: 3.2em;
+    margin-top: 0;
+
+}
+
+.ctabox__content p { 
+
+    font-size: 1.15em;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 18px;
+    color: #1b4848;
+    background: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #1b4848;
+    border-radius: 5px;
+    transition: color 0.15s, background 0.15s, border-color 1.15s;
+}
+
+.button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background: #1b4848; 
+}
+
+.button i {
+    margin-left: 10px;
+}
+
+.icongroup {
+    display: flex;
+    align-items: center;
+
+}
+
+.icongroup__icon {
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 1.75rem;
+    transition: color 0.15s;
+}
+
+.icongroup__icon:not(:last-child) {
+    margin-right: 15px;
+}
+
+.icongroup__icon:hover {
+    color: #1b4848;
+}
+
+#footer {
+    background: transparent;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+}
+
+.grid__item{
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid__icon {
+    font-size: 5em;
+}
+
+.grid__text {
+    margin-top: 20px;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 480px){
+    .ctabox {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .grid {
+        font-size: 0.85rem;
+    }
+
+    .grid__item {
+        width: 50%;
+    }
+}

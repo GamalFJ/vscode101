@@ -1,0 +1,39 @@
+/* CSS HEX */
+ --light-wisteria: #d9ace1;
+--violent-violet: #191161;
+--purple-heart: #7845d1;
+--daisy-bush: #4927aa;
+--black-pearl: #070628;
+--vivid-violet: #802b8e;
+--chetwode-blue: #8d9cdf;
+--amethyst: #be32c2;
+--honey-flower: #4e1976;
+--comet: #575b85;
+
+
+/* SCSS HEX */
+$light-wisteria: #d9ace1;
+$violent-violet: #191161;
+$purple-heart: #7845d1;
+$daisy-bush: #4927aa;
+$black-pearl: #070628;
+$vivid-violet: #802b8e;
+$chetwode-blue: #8d9cdf;
+$amethyst: #be32c2;
+$honey-flower: #4e1976;
+$comet: #575b85;
+
+
+/* SCSS RGB */
+--light-wisteria: rgba(217,172,225,1);
+--violent-violet: rgba(25,17,97,1);
+--purple-heart: rgba(120,69,209,1);
+--daisy-bush: rgba(73,39,170,1);
+--black-pearl: rgba(7,6,40,1);
+--vivid-violet: rgba(128,43,142,1);
+--chetwode-blue: rgba(141,156,223,1);
+--amethyst: rgba(190,50,194,1);
+--honey-flower: rgba(78,25,118,1);
+--comet: rgba(87,91,133,1);
+
+

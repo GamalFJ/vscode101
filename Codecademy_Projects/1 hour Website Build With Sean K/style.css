@@ -1,0 +1,51 @@
+body {
+    background-image: url(./GroveYes.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+h1 {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+h2{
+    color: white;
+    padding: 25px;
+    margin-bottom: 0;
+}
+
+p {
+    /* width: 300px; */
+    color: white;
+    padding: 25px;
+    border: 2px solid black;
+    background-color: midnightblue;
+    text-align: justified;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 2);
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    background-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 10px;
+    color: midnightblue;
+}
+
+footer {
+    text-align: center;
+}
