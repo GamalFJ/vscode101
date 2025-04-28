@@ -5,71 +5,77 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title> My Website Design Style Guide - The Magic Codex</title>
-<link href="styles.css" type="text/css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tagesschrift&display=swap" rel="stylesheet">
+
+<link rel ="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
-  <h1>My Website Style Guide</h1>
+  <h1 id="header">The Magi's Arcanum (Website Style Design Guide)</h1>
   <div class="container">
-    <h2>Colors</h2>
+    <h2>My Color Palette</h2>
     <div class="color-container">
-      <div class="color-panel cool-blue">
-        <p class="color-label">Cool Blue</p>
-        <p class="color-hex">#2d5dcc</p>
+      <div class="color-panel indigo">
+        <p class="color-label">Indigo</p>
+        <p class="color-hex">#4B0082</p>
       </div>
-      <div class="color-panel pink">
-        <p class="color-label">Pink</p>
-        <p class="color-hex">#d957d9</p>
+      <div class="color-panel dark-red">
+        <p class="color-label">Dark Red</p>
+        <p class="color-hex">#8B0000</p>
       </div>
-      <div class="color-panel mint-green">
-        <p class="color-label">Mint Green</p>
-        <p class="color-hex">#4fe0b0</p>
+      <div class="color-panel chartreuse">
+        <p class="color-label">Chartreuse</p>
+        <p class="color-hex">#7FFF00</p>
       </div>
-      <div class="color-panel beige">
-        <p class="color-label">Beige</p>
-        <p class="color-hex">#efd9ca</p>
+      <div class="color-panel goldenrod">
+        <p class="color-label">Goldenrod</p>
+        <p class="color-hex">#DAA520</p>
       </div>
     </div>
   </div>
   <div class="container">
-    <h2>Fonts</h2>
+    <h2>My Scriptures (Fonts)</h2>
     <div class="font-container">
       <div class="font-panel">
-        <p class="font-label source-code-pro">Source Code Pro</p>
-        <p class="regular source-code-pro">The quick brown fox jumps over the lazy dog.</p>
-        <p class="bold source-code-pro">The quick brown fox jumps over the lazy dog.</p>
-        <p class="italic source-code-pro">The quicl brown fox jumps over the lazy dog.</p>
+        <p class="font-label source-code-pro">Montserrat</p>
+        <p class="regular montserrat">The quick brown fox jumps over the lazy dog.</p>
+        <p class="bold montserrat">The quick brown fox jumps over the lazy dog.</p>
+        <p class="italic montserrat">The quick brown fox jumps over the lazy dog.</p>
       </div>
       <div class="font-panel">
-        <p class="font-label nunito-sans">Nunito Sans</p>
-        <p class="regular nunito-sans">The quick brown fox jumps over the lazy dog.</p>
-        <p class="bold nunito-sans">The quick brown fox jumps over the lazy dog.</p>
-        <p class="italic nunito-sans">The quick brown fox jumps over the lazy dog.</p>
+        <p class="font-label comic-relief">Comic Relief</p>
+        <p class="regular comic-relief">The quick brown fox jumps over the lazy dog.</p>
+        <p class="bold comic-relief">The quick brown fox jumps over the lazy dog.</p>
+        <p class="italic comic-relief">The quick brown fox jumps over the lazy dog.</p>
       </div>
       <div class="font-panel">
-        <p class="font-label poppins">Poppins</p>
-        <p class="regular poppins">The quick brown fox jumps over the lazy dog.</p>
-        <p class="bold poppins">The quick brown fox jumps over the lazy dog.</p>
-        <p class="italic poppins">The quick brown fox jumps over the lazy dog.</p>
+        <p class="font-label tagesschrift">Tagesschrift</p>
+        <p class="regular tagesschrift">The quick brown fox jumps over the lazy dog.</p>
+        <p class="bold tagesschrift">The quick brown fox jumps over the lazy dog.</p>
+        <p class="italic tagesschrift">The quick brown fox jumps over the lazy dog.</p>
+      </div>
+      <div class="font-panel">
+        <p class="font-label dancing-script">Dancing Script (Only regular version)</p>
+        <p class="regular dancing-script">The quick brown fox jumps over the lazy dog.</p>
+
       </div>
     </div>
   </div>
   <div class="container">
-    <h2>Text Styles</h2>
+    <h2>My Runes (Text Styles)</h2>
     <div class="text-container">
       <div class="text-panel">
         <h1>H1: Main Page Heading</h1>
         <ul>
           <li>
-            ::marker
-            "Font-weight: 700(bold)"
+            Font-weight: 700 (bold)
           </li>
           <li>
-            ::marker 
-            "Font-size: 26px"
+            Font-size: 26px
           </li>
           <li>
-            ::marker
-            "Font-family: Nunito Sans"
+            Font-family: Nunito Sans
           </li>
         </ul>
       </div>
@@ -77,20 +83,40 @@
         <h2>H2: Subheading</h2>
         <ul>
           <li>
-            ::marker
-            "Font-weight: 500"
+            Font-weight: 500
           </li>
           <li>
-            ::marker
-            "Font-size: 18px"
+            Font-size: 18px
           </li>
-          
+          <li>
+            Font-family: Poppins
+          </li>
+        </ul>
+      </div>
+      <div class="text-panel">
+        <p>P: Paragraph text</p>
+        <ul>
+          <li>
+            Font-weight: 400 (regular)
+          </li>
+          <li>
+            Font-size: 14px
+          </li>
+          <li>
+            Font-family: Poppins 
+          </li>
         </ul>
       </div>
     </div>
   </div>
-</body>
-
+  <div class="section section--dark" id="footer">
+    <div class="section__content">
+        <p>
+            &copy; Copyright 2025 By The Code Magi (Codecademy Project)
+        </p>
+    </div>
+ </body>
+</html>
 
 
 
@@ -119,4 +145,4 @@
     <h3>My Scriptures</h3>
     <h3>Text Styles</h3>
 </body>
-</html> -->
+ -->
