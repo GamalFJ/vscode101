@@ -1,12 +1,19 @@
 body {
     background-image: url("GroveNew.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: "Comic Relief", system-ui;
     font-weight: bold;
     text-align: center;
     color : white; 
     height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+  
 
 h1 {
     margin-top: 10px;
@@ -48,5 +55,6 @@ button {
     margin: auto;
     border: 3px solid black;
     border-radius: 10px;
+    box-shadow: 0 0 10PX RGBA(0, 0, 0, 0.1)
 }
 
