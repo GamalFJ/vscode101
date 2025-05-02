@@ -1,0 +1,52 @@
+body {
+    background-image: url("GroveNew.png");
+    background-size: cover;
+    font-family: "Comic Relief", system-ui;
+    font-weight: bold;
+    text-align: center;
+    color : white; 
+    height: 100vh;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+button {
+    border: inset;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+#increment-btn {
+    background: darkviolet;
+    font-family: "Comic Relief", system-ui;
+}
+
+#save-btn {
+    background: chartreuse;
+    font-family: "Comic Relief", system-ui;
+    color : black;
+}
+
+.container {
+    background: black;
+    max-width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
