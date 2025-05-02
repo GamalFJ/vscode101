@@ -53,8 +53,9 @@ button {
     background: black;
     max-width: 80%;
     margin: auto;
-    border: 3px solid black;
+    border: 7px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10PX RGBA(0, 0, 0, 0.1)
 }
+
 
