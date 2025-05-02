@@ -58,4 +58,20 @@ button {
     box-shadow: 0 0 10PX RGBA(0, 0, 0, 0.1)
 }
 
+.icongroup {
+    display: flex;
+   align-items: center;
+}
+
+.icongroup__icon {
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 1.75rem;
+    transition: color 0.15s;
+}
+
+.icongroup__icon:hover {
+    color: #1b4848;
+}
+
 
