@@ -89,11 +89,11 @@ h1, h2, h3, h4, h5, h6 {
 .button {
     display: inline-block;
     padding: 8px 18px;
-    color: #1b4848;
+    color: #260443;
     background: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #1b4848;
+    border: 1px solid #260443;
     border-radius: 5px;
     transition: color 0.15s, background 0.15s, border-color 1.15s;
 }
