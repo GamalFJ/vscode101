@@ -1,3 +1,6 @@
+<a href="https://app.daily.dev/thecodemagi"><img src="https://api.daily.dev/devcards/v2/JEpM2M8xCU8MvvfdrjDBI.png?type=default&r=2it" width="356" alt="Gamal Jastram's Dev Card"/></a>
+
+
 Hello There, 👋
 
 My name is Gamal Jastram! You will find me as The Code Magi or Liam Crane on Social Media (Fictional Character created for entertainment purposes)
@@ -19,3 +22,4 @@ Fun facts:
 ## #30NitesOfCode:
   [Check out my progress!](https://www.codedex.io/@TheCodeMagi/30-nites-of-code)  
   ![@TheCodeMagi #30NitesOfCode](https://www.codedex.io/api/petStatus?user=TheCodeMagi)
+
