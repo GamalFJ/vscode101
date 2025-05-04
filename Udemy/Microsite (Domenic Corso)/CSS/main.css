@@ -97,13 +97,17 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;
     transition: color 0.15s, background 0.15s, border-color 1.15s;
 }
-
+/* Changed hover button colors to Dark Violet */
 .button:hover {
     color: #ffffff;
     border-color: #ffffff;
-    background: #1b4848; 
+    background: #9400D3; 
 }
-
+/* Changed hover colors for all buttons from green to purple, and for the Narnia button from green to chartreuse and the hover font color from white to black */
+#Narnia:hover {
+    background:chartreuse;
+    color:black;
+}
 .button i {
     margin-left: 10px;
 }
@@ -126,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .icongroup__icon:hover {
-    color: #1b4848;
+    color: #9400D3;
 }
 
 #footer {

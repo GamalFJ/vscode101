@@ -1,0 +1,63 @@
+
+/* Body & Background */
+body {
+    /* background: url("../Images/Background.webp"); */
+    background-image: url("../Images/Background.webp");
+    font-family: helvetica;
+    font-size: 22px;
+    color: black;
+    background-color: black;
+    opacity: 0.9;
+    text-align: center horizontal;
+    margin: 0;
+    padding-top: 60px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 69px;
+    background: #333;
+    border-bottom: 1px solid seashell;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    z-index: 1000;
+}
+
+img {
+    margin-left: 10px;
+    height: 50px;
+}
+
+/* .content h2 {
+
+} */
+
+.header .btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.header .btn-group button {
+    background: #555;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    text-decoration: underline;
+}
+
+/* .content {
+    
+} */
+
+/* .header .btn-group:hover {
+
+} */
