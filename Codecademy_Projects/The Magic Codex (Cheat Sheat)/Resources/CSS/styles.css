@@ -1,5 +1,5 @@
 body {
-    background-image: url(./Abstract.jpg);
+    background-image: url(./GroveNew.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,8 +62,8 @@ table { /*This builds the inner structure of our table*/
 }
 
 thead th { /* This edits the head of our table*/
-    background: OrangeRed;
-    color: black;
+    background: #290443;
+    color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 100;
     letter-spacing: 2px;
@@ -71,7 +71,7 @@ thead th { /* This edits the head of our table*/
 }
 
 tr { /* This edits the insides of our table*/
-    background: yellowgreen;
+    background: #9400D3;
     border-bottom: 1px solid white;
     margin-bottom: 5px;
 }
