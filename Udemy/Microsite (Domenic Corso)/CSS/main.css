@@ -67,15 +67,13 @@ html {
 }
 #hero {
     margin: 0;
-    padding: o;
+    padding: 0;
     min-height: 100%;
     width: 100%;
     background: url(../images/GroveNew.png);
     background-size: cover;
     background-position: center center;
-    backgrouns-repeat: no-repeat;
-    background-attachement: fixed;
-
+    background-repeat: no-repeat;
 }
 
 .ctabox {
