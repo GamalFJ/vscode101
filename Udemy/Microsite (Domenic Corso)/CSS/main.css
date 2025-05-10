@@ -6,7 +6,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 700px;
     font-style: normal;
-      }
+    }
 
 p {
     line-height: 1.6;
@@ -60,9 +60,21 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 #hero {
+    margin: 0;
+    padding: o;
+    min-height: 100%;
+    width: 100%;
     background: url(../images/GroveNew.png);
     background-size: cover;
+    background-position: center center;
+    backgrouns-repeat: no-repeat;
+    background-attachement: fixed;
 
 }
 
