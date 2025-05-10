@@ -13,7 +13,6 @@ p {
     font-size: 1.05rem;
     margin: 20px 0;
     color: white;
-
 }
 
 strong {
@@ -104,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #9400D3; 
 }
 /* Changed hover colors for all buttons from green to purple, and for the Narnia button from green to chartreuse and the hover font color from white to black */
+
 #Narnia:hover {
     background:chartreuse;
     color:black;

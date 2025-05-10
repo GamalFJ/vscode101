@@ -7,10 +7,15 @@ body {
     font-size: 22px;
     color: black;
     background-color: black;
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.9;
     text-align: center horizontal;
     margin: 0;
     padding-top: 60px;
+    padding-left: 700px;
+    padding-right: 700px;
 }
 
 .header {
@@ -54,10 +59,11 @@ img {
     text-decoration: underline;
 }
 
-/* .content {
-    
-} */
-
-/* .header .btn-group:hover {
-
-} */
+ .Content {
+    box-sizing: border-box;
+    /* display: inline-block;
+    center: vertical;
+    height: 20px;
+    width: 1200px;
+    position: absolute;*/
+ }
