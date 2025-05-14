@@ -160,15 +160,12 @@ footer {
 .grid {
   display: flex;
   flex-wrap: wrap;
-<<<<<<< HEAD
   gap: 20px;
   justify-content: center;
   align-items: center;
   align-content: center;
-=======
   justify-content: space-around;
   align-items: flex-start;
->>>>>>> 0895bd89cc71fd4d94c7c9bab3797b42e8f17f79
 }
 
 .grid--products .product-card {
