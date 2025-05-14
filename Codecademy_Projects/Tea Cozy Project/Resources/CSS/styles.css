@@ -168,9 +168,9 @@ footer {
   align-items: flex-start;
 }
 
-.grid--products .product-card {
-  /* width: calc(25% - 40px); */
-}
+/* .grid--products .product-card {
+  width: calc(25% - 40px);
+} */
 
 .product-card {
   background: rgba(101, 81, 81, 0.8);
