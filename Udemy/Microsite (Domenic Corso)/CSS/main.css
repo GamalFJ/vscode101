@@ -74,7 +74,7 @@ html {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachement: fixed;
+    /* background-attachement: fixed; */
 }
 
 .ctabox {
