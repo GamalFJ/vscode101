@@ -19,6 +19,9 @@ Fun facts:
 - House Slytherin
 
 
+<a href="https://roadmap.sh"><img src="https://roadmap.sh/card/wide/676f7bf670129741a8aca21c?variant=dark&roadmaps=ai-engineer" alt="roadmap.sh"/></a>
+
+
 ## #30NitesOfCode:
   [Check out my progress!](https://www.codedex.io/@TheCodeMagi/30-nites-of-code)  
   ![@TheCodeMagi #30NitesOfCode](https://www.codedex.io/api/petStatus?user=TheCodeMagi)
