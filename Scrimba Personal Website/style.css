@@ -15,18 +15,20 @@ body {
     text-align: center;
 }
 a {
-    background-color: white;
+    background-color: black;
     font-size: 20px;
     border-radius: 10px;
     padding: 10px;
-    display: block;
+    display: inline-flex;
     text-align: center;
     margin: 10px;
-    color: midnightblue;
+    color: gold;
 }
 #email {
-    background-color: darkgray;
-    border-radius: 5px;
+    background-color: gold;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0 auto;
     border-style: outset;
 }
 #Subscription {
@@ -38,7 +40,43 @@ a {
     padding: 5px;
     display: inline-box;
     margin: 5px;
+    color: gold;
+}
+
+#beacons {
+    background-color: grey;
+    font-size:20px;
+    font-weight: bold;
+    border-radius: 100px;
+    border-style: double;
+    padding: 5px;
+    display: inline-box;
+    margin: 5px;
     color: chartreuse;
+}
+
+footer {
+    font-weight: bold;
+    font-size: large;
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+    margin-top: 25px;
+}
 
 
+@media screen and (max-width: 480px){
+    #beacons {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #subscription {
+        font-size: 0.85rem;
+    }
+
+    #email {
+        width: 50%;
+    }
 }
