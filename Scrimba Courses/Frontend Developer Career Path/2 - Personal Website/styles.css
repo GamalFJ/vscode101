@@ -74,3 +74,8 @@ button {
     font-family: var(--font);
     width: 160px;
 }
+
+footer {
+    color: gold;
+    text-align: center;
+}
