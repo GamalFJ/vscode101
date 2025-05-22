@@ -1,44 +1,60 @@
-body, html {
-    margin: 0;
-    padding: 0; 
+body {
+    background-color: rgb(114, 38, 168);
+}
+.main {
+    margin-top: 100px;
 }
 
-img {
-    width: 30%;
+.logo {
     display: block;
-    margin: 100px auto 20px;
-    min-width: 272px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
 
-input {
-    box-sizing: border-box;
+.search {
+    line-height: 20px;
+    width: 400px;
     display: block;
-    border-radius: 24px;
-    border: 1px solid rgb(223, 225, 229);
-    height: 44px;
-    margin: 0 auto 29px;
-    max-width: 564px;
-    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 14px;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.btn { 
+    margin-top: 2px;
+    margin-left: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-left: 30px;
-    font-size: 16px;
+    padding-right: 30px;
+    border: 2px solid black;
+    border-radius: 18px;
+    background-color: rgb(22, 175, 27);
+    color: rgb(0, 0, 0);
 }
 
-button {
-    box-sizing: border-box;
-    margin-top: 0;
-    padding: 0 16px;
-    font-size: 14px;
-    height: 36px;
-    background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    cursor: pointer;
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
 }
 
-button:first-of-type {
-    margin-right: 8px;
-    margin-left: calc(50% - 131.5px);
-}
-
-button:hover {
-    cursor: pointer;  
+.footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    border-top: 1px solid #000000;
+    color: rgb(229, 225, 245);
+    padding-top: 8px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
