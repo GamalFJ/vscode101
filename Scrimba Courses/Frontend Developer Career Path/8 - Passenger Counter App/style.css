@@ -1,0 +1,108 @@
+/* insert background img, make sure the img takes up the entire page (no tile), handle the height(vh) and center everything */
+body {
+    background: url("holi2.png");
+    background-size: cover;
+    font-family: comic-sans;
+    height: 100vh;
+    text-align: center;
+    font-family: Aniron-One;
+    margin: 45px;
+    padding: 0;
+    min-height: 100%; 
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+@font-face {
+    src: url("anirm___.ttf");
+    font-family: Aniron-One;
+}
+
+/* style container class : bg, max-width, margin, border and radius */
+.container {
+    background-color: white;
+    max-width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h1 margins */
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* h2 margins, font size */
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+/* style both buttons : border, paddings, color, font, width, margin, radius */
+
+button {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+/* increment and save btns */
+
+#increment-btn {
+    background-color: orangered;
+    font-family: Aniron-One;
+    text-shadow: 0px 0px 1px black;
+}
+
+#save-btn {
+    background-color: blue;
+    font-family: Aniron-One;
+    text-shadow: 0px 0px 1px black;
+}
+
+/* save-el btn */
+
+#save-el {
+    font-weight: bold;
+}
+
+#newset-btn {
+    background-color: rgb(5, 155, 5);
+    font-family: Aniron-One;
+    text-shadow: 0px 0px 1px black;
+}
+
+#reset-btn {
+    background-color: rgb(186, 7, 148);
+    font-family: Aniron-One;
+    text-shadow: 0px 0px 1px black;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    border-top: 1px solid #000000;
+    color: rgb(0, 0, 0);
+    padding-top: 8px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

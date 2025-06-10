@@ -58,7 +58,7 @@ button {
     box-shadow: 0 0 10PX RGBA(0, 0, 0, 0.1)
 }
 
-.icongroup {
+/* .icongroup {
     display: flex;
    align-items: center;
 }
@@ -72,6 +72,6 @@ button {
 
 .icongroup__icon:hover {
     color: #1b4848;
-}
+} */
 
 

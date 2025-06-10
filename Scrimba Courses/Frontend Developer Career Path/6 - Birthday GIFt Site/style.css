@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    font-family: "Happy Monkey", cursive;
+    background: linear-gradient(rgb(6, 198, 6),rgb(191, 201, 7));
+    color: white;
+
+}
+
+#main-pic {
+    width: 200px;
+    border: 10px solid rgb(255, 106, 0);
+    border-radius: 600px;
+    margin-bottom: 10px;
+}
+
+#header {
+    display: block;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-shadow: 0px 0px 20px black;
+}

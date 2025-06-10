@@ -1,0 +1,31 @@
+body {
+  background: #000;
+  color: #fff;
+  padding: 25px;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#demo {
+    text-align: center;
+    margin-top: 60px;
+    color: yellow;
+}
+
+button {
+  display: block;
+  padding: 8px 65px;
+  line-height: 20px;
+  margin: 0 auto; 
+  color: white;
+  border: 2px solid darkviolet;
+  border-radius: 8px;
+  border-top: 2px solid pink;
+  border-bottom: 2px solid pink;
+  background: linear-gradient(#111111, #943863);
+  font-weight: bold;
+}
