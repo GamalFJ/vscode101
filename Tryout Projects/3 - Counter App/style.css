@@ -25,7 +25,7 @@ body {
     align-items: center;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 12px;
     margin-bottom: 100px;
     padding-left: 30px;
     padding-right: 30px;
@@ -69,7 +69,17 @@ button {
     color: rgb(208, 202, 202);
 }
 
+#reset-btn {
+    background:rgb(136, 2, 2);
+    color: rgb(208, 202, 202);
+}
+
 #save-el {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#entry {
     font-weight: bold;
     font-size: 18px;
 }

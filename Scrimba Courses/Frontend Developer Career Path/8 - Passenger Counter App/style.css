@@ -80,6 +80,10 @@ button {
     font-weight: bold;
 }
 
+#entry { 
+    font-weight: bold;
+}
+
 #newset-btn {
     background-color: rgb(5, 155, 5);
     font-family: Aniron-One;

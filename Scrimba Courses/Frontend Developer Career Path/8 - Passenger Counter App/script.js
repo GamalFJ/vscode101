@@ -44,5 +44,13 @@ function newset() {
 // TO DO !!!
 // Create a function for the Reset Button so that when clicked, it either reloads the page or resets everything as if reloading i.e (counter back to "0", erases all sets and reverts to "Set 1")
 
+function reset() {
+    count = 0
+    countEl.textContent = count
+    saveEl.textContent = ""
+}
 
 // Try and make it so that the reset button resets everything to original loading and that the New set button increment the number of sets with every new set and goes to the next line
+
+//Log 6/11/2025 @ 1:39AM
+// I figured it out!! (The reset button!)
