@@ -1,13 +1,45 @@
 body {
     margin: 0;
+    color: #0f0391;
     text-align: center;
-    background-image: url("Monaco-3.jpg");
-    background-size: cover;
-    padding: 10px 0 75px 0;
+    /* font-family: 'Orbitron', sans-serif; */
 }
 
-#hero {
-    
+#Hero {
+    background-image: url("./Monaco-3.jpg");
+    background-size: cover;
+    background-position: 40% 70%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 5vh;
+    padding: 150px 0 300px 0;
+    padding-top: 150px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activities {
+    display: block;
+    width: 10px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    background: #126b06;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
+}
+
+.hero-sub {
+    background: #126b06;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
 }
 
 img {

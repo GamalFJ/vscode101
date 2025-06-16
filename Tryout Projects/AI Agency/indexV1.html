@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Cove Labs | AI Web Dev Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('./GroveNew.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(42, 28, 77, 0.85);
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+    .cta-button {
+      background-color: #7f5af0;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 1rem;
+      margin: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #d9b8ff;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin: 1rem 0 2rem;
+      color: #c2a5ff;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .card {
+      background-color: rgba(58, 43, 95, 0.9);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      color: #f4d1ff;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      padding-left: 1rem;
+      color: #ddd;
+    }
+    .card .price {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #bb86fc;
+    }
+    .packages {
+      padding: 2rem;
+      text-align: center;
+    }
+    .packages h2 {
+      color: #eacfff;
+      margin-bottom: 1rem;
+    }
+    .package-tier {
+      background-color: rgba(44, 29, 77, 0.8);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0;
+    }
+    .package-tier h3 {
+      color: #f7d9ff;
+    }
+    .package-tier ul {
+      list-style: none;
+      padding: 0;
+      color: #eee;
+    }
+    .package-tier .price {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ad7eff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./PV mauve blanc.png" alt="Purple Cove Labs Logo" class="logo" />
+    <button class="cta-button">Get Started</button>
+  </header>
+
+  <section class="hero">
+    <h1>AI-Powered Web Development, Ready to Launch</h1>
+    <p>Fast, practical, and client-ready web services using the latest in AI and front-end tech.</p>
+    <button class="cta-button">Book a Free Consult</button>
+  </section>
+
+  <section class="services">
+    <div class="card">
+      <img src="https://cdn.openai.com/chat-assets/ai-landing-thumbnail.jpg" alt="Landing Page" />
+      <h3>AI Landing Page in 1 Day</h3>
+      <ul>
+        <li>Responsive Design</li>
+        <li>Custom Copy via AI</li>
+        <li>SEO Basics</li>
+        <li>Delivered in 24h</li>
+      </ul>
+      <div class="price">$149</div>
+    </div>
+    <div class="card">
+      <img src="https://cdn.openai.com/chat-assets/prompt-pack-thumbnail.jpg" alt="Prompt Pack" />
+      <h3>Prompt Packs for Your Niche</h3>
+      <ul>
+        <li>50+ Custom Prompts</li>
+        <li>Niche-Specific</li>
+        <li>Editable & Reusable</li>
+        <li>Format: Notion + PDF</li>
+      </ul>
+      <div class="price">$99</div>
+    </div>
+    <div class="card">
+      <img src="https://cdn.openai.com/chat-assets/blog-starter-thumbnail.jpg" alt="Blog Starter Kit" />
+      <h3>AI Blog Starter Kit</h3>
+      <ul>
+        <li>3 AI-Written Articles</li>
+        <li>Custom Blog Template</li>
+        <li>Optimized Layout</li>
+        <li>Includes CMS Setup</li>
+      </ul>
+      <div class="price">$199</div>
+    </div>
+    <div class="card">
+      <img src="https://cdn.openai.com/chat-assets/mini-app.jpg" alt="Mini Web App" />
+      <h3>Mini Web App Builder</h3>
+      <ul>
+        <li>1-Page App</li>
+        <li>Includes Form or Chatbot</li>
+        <li>Responsive & Fast</li>
+        <li>Deployed Online</li>
+      </ul>
+      <div class="price">$249</div>
+    </div>
+    <div class="card">
+      <img src="https://cdn.openai.com/chat-assets/ai-automation.jpg" alt="AI Workflow Integration" />
+      <h3>AI Workflow Integration</h3>
+      <ul>
+        <li>Connects ChatGPT or Zapier</li>
+        <li>Automate Repetitive Tasks</li>
+        <li>API & Spreadsheet Hooks</li>
+        <li>Simple Dashboard (optional)</li>
+      </ul>
+      <div class="price">$349</div>
+    </div>
+  </section>
+
+  <section class="packages">
+    <h2>Flexible Packages for Every Stage</h2>
+    <div class="package-tier">
+      <h3>Basic</h3>
+      <ul>
+        <li>AI Landing Page</li>
+        <li>Prompt Pack (General)</li>
+      </ul>
+      <div class="price">$199</div>
+    </div>
+    <div class="package-tier">
+      <h3>Standard</h3>
+      <ul>
+        <li>Landing Page + Prompt Pack</li>
+        <li>1 AI Blog Post + CMS Template</li>
+        <li>Mini Web App (Predefined Template)</li>
+        <li>Email Support</li>
+      </ul>
+      <div class="price">$399</div>
+    </div>
+    <div class="package-tier">
+      <h3>Full Suite</h3>
+      <ul>
+        <li>All Productized Services</li>
+        <li>AI Workflow Integration</li>
+        <li>Custom Mini Web App</li>
+        <li>30-Day Post-Launch Support</li>
+        <li>Priority Delivery</li>
+      </ul>
+      <div class="price">$749</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Purple Cove Labs — Crafted with code & creativity
+  </footer>
+</body>
+</html>
