@@ -1,0 +1,81 @@
+/* Set up the body with a background and basic styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f5; /* Light pink background */
+  color: #333;
+  text-align: center;
+}
+
+/* Style the header with a vibrant background */
+header {
+  background-color: #08a12c; /* Vibrant pink */
+  padding: 1.5rem 0;
+  color: white;
+}
+
+/* Main content container with spacing and layout */
+.container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section headings */
+h2 {
+  color: #401ee9; /* A complementary pink */
+}
+
+/* Style the form input field */
+input[type="text"] {
+  padding: 0.5rem;
+  width: 70%;
+  font-size: 1rem;
+  margin-right: 1rem;
+  border: 2px solid #ab2b2b;
+  border-radius: 5px;
+}
+
+/* Style the submit and draw buttons */
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #8c40ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#reset-button {
+    background-color: #ff0000;
+    padding: 10px 35px;
+    line-height: 19px;
+}
+
+/* Change background color when button is hovered */
+button:hover {
+  background-color: #e91e63;
+}
+
+/* Participant list - remove bullets and add spacing */
+#participants-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+#participants-list li {
+  padding: 0.3rem;
+  background-color: #ffe4ec;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+}
+
+/* Winner text styling */
+#winner-display {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #d81b60;
+}
