@@ -62,6 +62,14 @@ I customized the base project to reflect my own style, preferences, and function
 
 ---
 
+###  Icons
+
+- Changed the app's name from "HomeHarmony" to "Home Pal | Powered by Purple Cove Labs". Added the Purple Cove logo as icons instead of the ones by HomeHarmony.
+
+
+
+---
+
 ## 📚 Tools & Resources Used
 
 This project was built using a mix of:
