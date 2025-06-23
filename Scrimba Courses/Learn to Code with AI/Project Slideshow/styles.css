@@ -1,0 +1,77 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* Main container for the slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 400px; /* Adjust the height as needed */
+}
+
+/* Individual slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Initially hide all slides */
+  transition: opacity 0.5s ease; /* Fade transition effect */
+}
+
+/* Active slide */
+.slide.active {
+  opacity: 1;
+}
+
+/* Image within each slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide content overlay */
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+  color: #fff;
+  padding: 20px;
+}
+
+/* Dot navigation container */
+.dot-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Dot navigation item */
+.dot-navigation-item {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Active dot */
+.dot-navigation-item.active {
+  background-color: #555;
+}
