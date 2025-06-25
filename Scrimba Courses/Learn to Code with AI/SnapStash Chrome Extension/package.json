@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s05f6us",
+  "description": "https://scrimba.com/learn-to-code-with-ai-c02m/~0t",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
