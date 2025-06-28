@@ -1,0 +1,308 @@
+Compliment Generator essentials 
+
+Firebase
+
+Kudos Realtime Database : https://kudos-scrimba-default-rtdb.firebaseio.com/
+
+Prompts.md
+
+## Save compliments to Firebase
+I'd like to build a Compliment Generator that randomly selects compliments from a Firebase Realtime Database and displays them to users.
+
+First, program the submission form to let users add new compliments to the database. Use my Firebase config and existing project code as a reference:
+
+```
+<!doctype html>
+<html>
+    <head>
+        <title>Compliment Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                <span class="icon material-symbols-outlined">person_celebrate</span>
+                KudosDelight
+            </h1>
+            <p class="display" id="compliment-display"></p>
+            <button id="generateButton">Generate a Kudo</button>
+            <button class="btn-secondary" id="toggleFormButton">Add Kudos</button>
+            <p id="successMessage" style="display: none">Kudo added successfully!</p>
+            <form id="complimentForm" class="hidden">
+                <label for="complimentInput">Write a Kudo:</label>
+                <input type="text" id="complimentInput">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
+
+----
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"
+import { getDatabase, ref, push, get } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js"
+
+// Firebase configuration
+const firebaseConfig = {
+  databaseURL: process.env.KUDOS_DB
+}
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const complimentsRef = ref(database, "compliments");
+
+// Select page elements
+const generateButton = document.getElementById('generateButton');
+const complimentDisplay = document.getElementById('compliment-display');
+const complimentForm = document.getElementById('complimentForm');
+const complimentInput = document.getElementById('complimentInput');
+
+// Function to show/hide the submission form
+toggleFormButton.addEventListener('click', () => {
+  complimentForm.classList.toggle('hidden');
+  complimentForm.classList.contains('hidden') ? toggleFormButton.textContent = 'Add Kudos' : toggleFormButton.textContent = 'Hide Form';
+});
+
+// Function to handle form submission
+complimentForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    const newCompliment = complimentInput.value.trim(); // Get the value from the input field and trim any leading/trailing whitespace
+
+    if (newCompliment !== '') {
+        // Check if the input is not empty
+        push(complimentsRef, newCompliment) // Push the new compliment to the Firebase database
+            .then(() => {
+                complimentInput.value = ''; // Clear the input field
+                complimentForm.classList.add('hidden'); // Hide the form after submission
+                toggleFormButton.textContent = 'Add Kudos'; // Update the button text
+            })
+            .catch((error) => {
+                console.error('Error adding compliment:', error);
+            });
+    }
+});
+
+-------
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    color: #22223b;
+    padding: 12px;
+}
+
+h1 {
+    color: #03045e;
+    font-size: 38px;
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    font-size: 38px;
+}
+
+.container {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    max-width: 600px;
+    min-height: 95vh;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.display {
+    background-color: #caf0f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+form {
+    margin-top: 26px;
+}
+
+button {
+    background-color: #0077b6;
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #026498;
+}
+
+.btn-secondary {
+    background-color: #00b4d8;
+}
+
+.btn-secondary:hover {
+    background-color: #019bba;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 12px 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    border: solid 1px #03045e;
+}
+
+.hidden {
+    display: none;
+}
+
+	
+```
+
+Please add detailed comments to the new code to help me understand it.
+
+## Retrieve compliments
+Next, write the functionality that gets the compliments data from Firebase, then displays a random compliment to the user each time they click the generate button.
+ 
+
+
+
+JS
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"
+import { getDatabase, ref, push, get } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js"
+
+// Firebase configuration
+const firebaseConfig = {
+  databaseURL: process.env.KUDOS_DB
+}
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const complimentsRef = ref(database, "compliments");
+
+// Select page elements
+const generateButton = document.getElementById('generateButton');
+const complimentDisplay = document.getElementById('compliment-display');
+const complimentForm = document.getElementById('complimentForm');
+const complimentInput = document.getElementById('complimentInput');
+const successMessage = document.getElementById('successMessage');
+
+// Function to show/hide the submission form
+toggleFormButton.addEventListener('click', () => {
+  complimentForm.classList.toggle('hidden');
+  complimentForm.classList.contains('hidden') ? toggleFormButton.textContent = 'Add Kudos' : toggleFormButton.textContent = 'Hide Form';
+});
+
+// Function to show the success message for 3 seconds
+function showSuccessMessage() {
+    successMessage.style.display = 'block'; // Display the success message
+    setTimeout(() => {
+        successMessage.style.display = 'none'; // Hide the success message after 3 seconds
+    }, 3000);
+}
+
+// Function to handle form submission
+complimentForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    const newCompliment = complimentInput.value.trim(); // Get the value from the input field and trim any leading/trailing whitespace
+
+    if (newCompliment !== '') {
+        // Check if the input is not empty
+        push(complimentsRef, newCompliment) // Push the new compliment to the Firebase database
+            .then(() => {
+                complimentInput.value = ''; // Clear the input field
+                complimentForm.classList.add('hidden'); // Hide the form after submission
+                toggleFormButton.textContent = 'Add Kudos'; // Update the button text
+                showSuccessMessage(); // Show the success message
+            })
+            .catch((error) => {
+                console.error('Error adding compliment:', error);
+            });
+    }
+});
+
+// Function to fetch compliments data from Firebase
+function fetchCompliments() {
+    // Use the `get` function to retrieve data from the Firebase database
+    get(complimentsRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const complimentsData = snapshot.val(); // Get the data as an object
+                const complimentsArray = Object.values(complimentsData); // Convert the object to an array
+
+                // Display a random compliment from the array
+                const randomIndex = Math.floor(Math.random() * complimentsArray.length);
+                const randomCompliment = complimentsArray[randomIndex];
+                complimentDisplay.textContent = randomCompliment;
+            } else {
+                complimentDisplay.textContent = "No kudos available."; // Handle case where no compliments exist
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching compliments:', error);
+        });
+}
+
+// Add a click event listener to the generate button
+generateButton.addEventListener('click', fetchCompliments);
+
+-----
+
+HTML
+
+<!doctype html>
+<html>
+    <head>
+        <title>Compliment Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                <span class="icon material-symbols-outlined">person_celebrate</span>
+                KudosDelight
+            </h1>
+            <p class="display" id="compliment-display"></p>
+            <button id="generateButton">Generate a Kudo</button>
+            <button class="btn-secondary" id="toggleFormButton">Add Kudos</button>
+            <p id="successMessage" style="display: none">Kudo added successfully!</p>
+            <form id="complimentForm" class="hidden">
+                <label for="complimentInput">Write a Kudo:</label>
+                <input type="text" id="complimentInput">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>

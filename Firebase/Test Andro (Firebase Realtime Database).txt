@@ -1,0 +1,112 @@
+Test Andro (Firebase Realtime Database)
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDmGwuSXjc599qTysbcoX9lsS7jaxefnaA",
+    authDomain: "test-andro-36ce4.firebaseapp.com",
+    databaseURL: "https://test-andro-36ce4-default-rtdb.firebaseio.com",
+    projectId: "test-andro-36ce4",
+    storageBucket: "test-andro-36ce4.firebasestorage.app",
+    messagingSenderId: "616998046737",
+    appId: "1:616998046737:web:d60cb83146ce1094c0b5b0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+-------
+
+
+Here's a basic HTML + JS setup that includes Firebase modules using ES Modules (modern way):
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase Realtime Demo</title>
+</head>
+<body>
+  <h1>🚀 Firebase Realtime Demo</h1>
+
+  <input id="input-field" placeholder="Write something..." />
+  <button id="add-button">Add to DB</button>
+
+  <ul id="messages-list"></ul>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+
+
+----
+
+Connect to Firebase and Use Realtime Database
+
+// 🔥 Import required Firebase modules from CDN
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
+import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js';
+
+// 🔐 Firebase config object from your Firebase Console
+const firebaseConfig = {
+  apiKey: "AIza...YourKey...",
+  authDomain: "your-project.firebaseapp.com",
+  databaseURL: "https://your-project.firebaseio.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123...",
+  appId: "1:123..."
+};
+
+// ✅ Initialize Firebase app
+const app = initializeApp(firebaseConfig);
+
+// 🔌 Connect to the Realtime Database
+const database = getDatabase(app);
+
+// 📍 Reference a location in the database (like a folder)
+const messagesInDB = ref(database, 'messages');
+
+// 🌱 Get DOM elements
+const inputEl = document.getElementById('input-field');
+const addButtonEl = document.getElementById('add-button');
+const messagesListEl = document.getElementById('messages-list');
+
+// ➕ Add new message to DB on button click
+addButtonEl.addEventListener('click', () => {
+  const inputValue = inputEl.value;
+
+  if (inputValue.trim() !== "") {
+    // ⬆️ Push sends a new value into the 'messages' list
+    push(messagesInDB, inputValue);
+    inputEl.value = ""; // Clear the input
+  }
+});
+
+// 🔁 Listen for data changes in realtime
+onValue(messagesInDB, (snapshot) => {
+  // 🧼 Clear existing list
+  messagesListEl.innerHTML = "";
+
+  if (snapshot.exists()) {
+    const messagesArray = Object.entries(snapshot.val());
+
+    messagesArray.forEach(([id, value]) => {
+      const newEl = document.createElement('li');
+      newEl.textContent = value;
+      messagesListEl.appendChild(newEl);
+    });
+  } else {
+    messagesListEl.innerHTML = "<li>No messages yet 😴</li>";
+  }
+});
+
