@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- FAVICONS -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0b14">
+
+
+<meta name="msapplication-TileColor" content="#0b0b14">
+<meta name="theme-color" content="#0b0b14">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrynKit – SOP Assistant</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* Abstract Overlays */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%);
+      filter: blur(120px);
+      z-index: -1;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%);
+      filter: blur(100px);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, rgba(26, 8, 45, 0.8), rgba(11, 11, 20, 0.95));
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    header img.logo {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+  header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #a855f7, #6a0dad);
+  background-clip: text;               /* Standard fallback */
+  -webkit-background-clip: text;       /* WebKit-specific */
+  color: transparent;                  /* Fallback for browsers */
+  -webkit-text-fill-color: transparent;/* WebKit-specific */
+  margin-bottom: 1rem;
+}
+
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    header img.hero-img {
+      width: 300px;
+      max-width: 90%;
+      margin: 2rem auto 1.5rem;
+      filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.8));
+      border-radius: 20px;
+      display: block;
+      animation: floatOryn 6s ease-in-out infinite;
+    }
+
+    @keyframes floatOryn {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .cta-btn {
+      background: #a855f7;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .feature {
+      flex: 1 1 280px;
+      background: rgba(24, 24, 40, 0.9);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    }
+
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      color: #a855f7;
+    }
+
+    .feature p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* Form */
+    iframe {
+      border: none;
+      width: 100%;
+      height: 600px;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      background: #0b0b14;
+      color: #aaa;
+      margin-top: 2rem;
+    }
+
+    footer span {
+      color: #a855f7;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      iframe {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs Logo">
+    <h1>OrynKit – SOP Assistant</h1>
+    <p>Turn any task into a clear, step-by-step SOP – instantly.</p>
+    <img class="hero-img" src="orynkit.png" alt="OrynKit">
+    <button class="cta-btn" onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth'})">
+      Generate My SOP
+    </button>
+  </header>
+
+  <section>
+    <h2>Why Use OrynKit?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Save Hours</h3>
+        <p>Stop manually writing SOPs. OrynKit automates them in minutes.</p>
+      </div>
+      <div class="feature">
+        <h3>Process Optimization</h3>
+        <p>Get AI-driven suggestions to improve your workflows.</p>
+      </div>
+      <div class="feature">
+        <h3>Ready-to-Use Output</h3>
+        <p>Receive clean, structured SOPs directly in your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tally Form Section -->
+  <section id="form-section">
+    <h2>Try It Now</h2>
+    <iframe src="https://tally.so/r/waqebb" frameborder="0" title="OrynKit SOP Form"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
+  </footer>
+</body>
+</html>

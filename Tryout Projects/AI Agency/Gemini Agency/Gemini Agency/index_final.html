@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Cove Labs - AI Web Dev Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === NAVBAR MODIFICATIONS START === */
+        header {
+            padding: 0.5rem 0; /* Reduced top-bottom padding */
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+        }
+
+        nav.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 1rem; /* Slimmer padding inside navbar */
+        }
+
+        nav .logo img {
+            width: 100px; /* Slightly smaller logo */
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            padding: 0.3rem 0.5rem; /* Slimmer link spacing */
+            font-size: 0.95rem;
+        }
+        /* === NAVBAR MODIFICATIONS END === */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo"><img src="./Purple_Cove_Labs_Transparent.png" width="125" alt="Purple Cove Labs Logo">AI Web Dev Agency</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#bundles">Bundles</a></li>
+                <li><a href="#" class="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>We Build the Future of AI-Driven Web</h1>
+                    <p>At Purple Cove Labs, we merge sleek design with AI innovation to create web solutions that accelerate growth, empower creators, and set businesses apart.</p>
+                    <a href="#bundles" class="btn btn-primary">Explore Packages</a>
+                </div>
+                <div class="hero-image">
+                    <img src="./dev-img.png" alt="Developer using AI">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2>Productized AI Services</h2>
+            <p class="section-subtitle">Offering AI-driven solutions to transform your digital presence and workflows.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="./orynkit.png" alt="OrynKit AI Agent Builder Kit">
+                    <h3>OrynKit – AI Agent Builder Kit</h3>
+                    <p>Quickly design, deploy, and manage custom AI agents tailored for modern business workflows.</p>
+                </div>
+                <div class="service-card">
+                    <img src="./ai-strategy-console.png" alt="AI Strategy Console">
+                    <h3>AI Strategy Console</h3>
+                    <p>Plan, implement, and optimize your AI roadmap with our all-in-one strategic console.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bundles" class="container">
+            <h2>AI Growth Bundles</h2>
+            <p class="section-subtitle">Choose a package tailored to kickstart your AI-powered business journey.</p>
+            <div class="bundles-grid">
+                <div class="bundles-card">
+                    <!-- INSERT launchkit-thumb.png here -->
+                    <img src="./Launchkit Gpt4o.png" alt="LaunchKit package icon">
+                    <h3>LAUNCHKIT</h3>
+                    <p class="tier-description">A starter pack to integrate AI into your website and launch your first agent.</p>
+                    <div class="price">$499</div>
+                    <ul>
+                        <li><span class="checkmark">✔</span> AI Landing Page</li>
+                        <li><span class="checkmark">✔</span> Basic OrynKit Agent</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Purchase Now</a>
+                </div>
+
+                <div class="bundles-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <!-- INSERT growthhub-thumb.png here -->
+                    <img src="./GrowthHub Gpt4o.png" alt="GrowthHub package icon">
+                    <h3>GROWTHHUB</h3>
+                    <p class="tier-description">Accelerate your business with multiple AI agents and a strategy dashboard.</p>
+                    <div class="price">$899</div>
+                    <ul>
+                        <li><span class="checkmark">✔</span> AI Strategy Console</li>
+                        <li><span class="checkmark">✔</span> 2 OrynKit Agents</li>
+                        <li><span class="checkmark">✔</span> Workflow Automation</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Purchase Now</a>
+                </div>
+
+                <div class="bundles-card">
+                    <!-- INSERT visionpro-thumb.png here -->
+                    <img src="./VisionPro Gpt4o.png" alt="VisionPro package icon">
+                    <h3>VISIONPRO</h3>
+                    <p class="tier-description">Our premium package for full-scale AI implementation and custom automation.</p>
+                    <div class="price">$2,499</div>
+                    <ul>
+                        <li><span class="checkmark">✔</span> Advanced OrynKit Agents</li>
+                        <li><span class="checkmark">✔</span> AI Strategy Console</li>
+                        <li><span class="checkmark">✔</span> Custom Workflow Automation</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Purchase Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Purple Cove Labs. All Rights Reserved.</p>
+            <p>
+                <a href="https://x.com/thecodemagi" target="_blank">Twitter</a> &nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/gamal-jastram-8a88b7175/" target="_blank">LinkedIn</a> &nbsp;&nbsp;
+                <a href="https://beacons.ai/thecodemagi" target="_blank">Beacons.Ai</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

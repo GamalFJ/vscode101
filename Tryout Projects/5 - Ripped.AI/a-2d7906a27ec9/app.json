@@ -1,0 +1,97 @@
+{
+  "expo": {
+    "name": "Ripped.AI",
+    "slug": "ripped-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/natively-dark.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/natively-dark.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a1a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rippedai.fitness",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSHealthShareUsageDescription": "This app uses HealthKit to track your fitness data and provide personalized workout recommendations.",
+        "NSHealthUpdateUsageDescription": "This app uses HealthKit to save your workout data and track your fitness progress.",
+        "NSMotionUsageDescription": "This app uses motion data to track your workouts and provide accurate fitness metrics.",
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes for gym equipment information.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone for voice commands during workouts.",
+        "NSUserNotificationsUsageDescription": "This app sends notifications to remind you about workouts and rest periods."
+      },
+      "associatedDomains": ["applinks:ripped.ai"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/natively-dark.png",
+        "backgroundColor": "#1a1a1a"
+      },
+      "package": "com.rippedai.fitness",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.BODY_SENSORS",
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.VIBRATE",
+        "android.permission.WAKE_LOCK"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "ripped.ai"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/final_quest_240x240.png",
+      "bundler": "metro",
+      "output": "static",
+      "lang": "en",
+      "name": "Ripped.AI - AI Fitness Trainer",
+      "shortName": "Ripped.AI",
+      "description": "Your AI-powered fitness companion for workouts, nutrition, and health tracking",
+      "themeColor": "#d4af37",
+      "backgroundColor": "#1a1a1a",
+      "startUrl": "/",
+      "display": "standalone",
+      "orientation": "portrait",
+      "scope": "/",
+      "crossOrigin": "use-credentials"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router",
+      "expo-sensors"
+    ],
+    "scheme": "rippedai",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "your-project-id-here"
+      }
+    },
+    "owner": "your-expo-username",
+    "privacy": "public",
+    "githubUrl": "https://github.com/your-username/ripped-ai"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gamz Select Watches</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center bg-cover bg-center" style="background-image:url('hero-watch.jpg')">
+    <h1 class="text-5xl font-bold mb-4">Gamz Select Watches</h1>
+    <p class="text-xl mb-8">Fine curated timepieces & Orologo AI horology expert</p>
+    <div class="flex space-x-4">
+      <a href="#shop" class="bg-black text-white py-3 px-6 rounded-lg">Shop Collection</a>
+      <a href="#orologo" class="border border-black py-3 px-6 rounded-lg">Ask Orologo AI</a>
+    </div>
+  </section>
+
+  <!-- Featured Collection -->
+  <section id="shop" class="py-16 px-8 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-8">Featured Watches</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Repeat this card -->
+      <div class="border rounded-lg shadow hover:shadow-lg transition p-4">
+        <img src="watch1.jpg" alt="Watch" class="w-full h-48 object-cover mb-4"/>
+        <h3 class="text-xl font-medium">Rolex Submariner</h3>
+        <p class="text-gray-600">$12,500</p>
+        <button class="mt-4 bg-black text-white w-full py-2 rounded-lg">Add to Cart</button>
+      </div>
+      <!-- /card -->
+    </div>
+  </section>
+
+  <!-- Orologo AI Section -->
+  <section id="orologo" class="py-16 bg-gray-50 px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Introducing Orologo AI</h2>
+      <p class="mb-8">Your 24/7 horology expert: ask anything about watches in any language.</p>
+      <div class="border rounded-lg p-4 mb-6">
+        <!-- Chat mockup -->
+        <p><strong>You:</strong> “What’s the difference between Daytona and Submariner?”</p>
+        <p><strong>Orologo AI:</strong> “The Daytona is a chronograph...”</p>
+      </div>
+      <a href="#chat" class="bg-black text-white py-3 px-6 rounded-lg">Start Chatting</a>
+    </div>
+  </section>
+
+  <!-- ... Further sections ... -->
+
+</body>
+</html>
