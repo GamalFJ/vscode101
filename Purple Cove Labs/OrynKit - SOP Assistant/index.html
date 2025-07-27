@@ -2,67 +2,58 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPY9RPG4M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPY9RPG4M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7EPY9RPG4M');
+  </script>
 
-  gtag('config', 'G-7EPY9RPG4M');
-</script>
-<!-- FAVICONS -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#0b0b14">
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0b14">
 
-
-<meta name="msapplication-TileColor" content="#0b0b14">
-<meta name="theme-color" content="#0b0b14">
+  <meta name="msapplication-TileColor" content="#0b0b14">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OrynKit – SOP Assistant</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-    body {
+    html, body {
       margin: 0;
+      height: 100%;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
       color: #fff;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      background-attachment: scroll; /*fallback for ios*/
-      position: relative;
+      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll; /* iOS friendly */
     }
 
-    /* Abstract Overlays */
-    body::before {
-      content: '';
+    /* Background Overlay (Fix for iOS) */
+    .bg-overlay {
       position: fixed;
-      top: -200px;
-      left: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%);
-      filter: blur(120px);
-      z-index: -1;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -200px;
-      right: -200px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%) -200px -200px no-repeat,
+        radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%) calc(100% + 200px) calc(100% + 200px) no-repeat;
+      background-size: 600px 600px, 500px 500px;
       filter: blur(100px);
       z-index: -1;
+      pointer-events: none;
     }
 
     /* Header */
@@ -79,17 +70,16 @@
       margin-bottom: 1rem;
     }
 
-  header h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #a855f7, #6a0dad);
-  background-clip: text;               /* Standard fallback */
-  -webkit-background-clip: text;       /* WebKit-specific */
-  color: transparent;                  /* Fallback for browsers */
-  -webkit-text-fill-color: transparent;/* WebKit-specific */
-  margin-bottom: 1rem;
-}
-
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a855f7, #6a0dad);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
 
     header p {
       font-size: 1.2rem;
@@ -109,12 +99,8 @@
     }
 
     @keyframes floatOryn {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
     .cta-btn {
@@ -206,21 +192,15 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      iframe {
-        height: 500px;
-      }
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      iframe { height: 500px; }
     }
   </style>
 </head>
 <body>
+  <div class="bg-overlay"></div> <!-- iOS-friendly background -->
+  
   <header>
     <img class="logo" src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs Logo">
     <h1>OrynKit – SOP Assistant</h1>
