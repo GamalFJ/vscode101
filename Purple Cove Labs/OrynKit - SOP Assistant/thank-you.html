@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPY9RPG4M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPY9RPG4M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7EPY9RPG4M');
+    gtag('event', 'sop_generated', {
+      'event_category': 'conversion',
+      'event_label': 'thank_you_page_view'
+    });
+  </script>
 
-  gtag('config', 'G-7EPY9RPG4M');
-</script>
- <!-- FAVICONS -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#0b0b14">
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0b14">
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,110 +30,52 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-    body {
+    html, body {
       margin: 0;
+      height: 100%;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll; /* iOS-friendly */
     }
 
-    /* Abstract Overlays */
-    body::before {
-      content: '';
+    /* Background Overlay */
+    .bg-overlay {
       position: fixed;
-      top: -200px;
-      left: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%);
-      filter: blur(120px);
-      z-index: -1;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -200px;
-      right: -200px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%) -200px -200px no-repeat,
+        radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%) calc(100% + 200px) calc(100% + 200px) no-repeat;
+      background-size: 600px 600px, 500px 500px;
       filter: blur(100px);
       z-index: -1;
+      pointer-events: none;
     }
 
-    .thank-you-box {
-      background: rgba(24, 24, 40, 0.9);
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      max-width: 500px;
-      animation: fadeIn 1.2s ease;
+    .container {
+      text-align: center;
+      padding: 4rem 1.5rem;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    /* Checkmark Animation */
-    .checkmark {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: inline-block;
-      border: 4px solid #a855f7;
-      position: relative;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a855f7, #6a0dad);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
-      animation: pulse 2s infinite;
     }
-
-    .checkmark::after {
-      content: '';
-      position: absolute;
-      left: 22px;
-      top: 10px;
-      width: 20px;
-      height: 40px;
-      border-right: 4px solid #a855f7;
-      border-bottom: 4px solid #a855f7;
-      transform: rotate(45deg);
-      animation: draw 1s ease forwards;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
-      50% { box-shadow: 0 0 30px rgba(168, 85, 247, 1); }
-    }
-
-    @keyframes draw {
-      0% { height: 0; width: 0; opacity: 0; }
-      50% { height: 0; width: 20px; opacity: 1; }
-      100% { height: 40px; width: 20px; }
-    }
-
-   h1 {
-  font-size: 2.2rem;
-  background: linear-gradient(90deg, #a855f7, #6a0dad);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-}
-
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #ccc;
       margin-bottom: 2rem;
     }
@@ -134,33 +83,46 @@
     .cta-btn {
       background: #a855f7;
       border: none;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2rem;
       font-size: 1rem;
       border-radius: 50px;
       cursor: pointer;
       color: #fff;
       font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
-      text-decoration: none;
-      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .cta-btn:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
     }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      background: #0b0b14;
+      color: #aaa;
+      margin-top: 2rem;
+    }
+
+    footer span {
+      color: #a855f7;
+    }
   </style>
 </head>
 <body>
-  <div class="thank-you-box">
-    <div class="checkmark"></div>
+  <div class="bg-overlay"></div> <!-- iOS-friendly background -->
+
+  <div class="container">
     <h1>Thank You!</h1>
-    <p>Your request has been received.<br>
-    The SOP will be generated and sent to your email shortly.</p>
-    <a href="index.html" class="cta-btn">Go Back to Home</a>
+    <p>Your SOP will be sent to your email shortly.</p>
+    <button class="cta-btn" onclick="window.location.href='index.html'">Return to Home</button>
   </div>
+
+  <footer>
+    &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
+  </footer>
 </body>
 </html>
-
-<script>gtag('event', 'sop_generated');</script>
