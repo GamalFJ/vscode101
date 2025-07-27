@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrynKit – SOP Pro Access</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a082d, #0b0b14);
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(24,24,40,0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+      position: relative;
+    }
+    h1 {
+      color: #a855f7;
+      font-size: 2.2rem;
+    }
+    p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+     footer span {
+      color: #a855f7;
+    }
+    
+    a.download-btn {
+      display: inline-block;
+      background: #6a0dad;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    a.download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Logos */
+    .logo {
+      width: 90px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .orynkit-logo {
+      width: 150px;
+      margin: 8rem auto 2rem auto; /* Increased top margin for spacing */
+      display: block;
+      animation: floatLogo 6s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+      border-radius: 50%;
+    }
+    .orynkit-logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.9);
+    }
+
+    /* Animations */
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.9); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Purple Cove Labs Logo -->
+    <img class="logo" src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs Logo">
+
+    <!-- Hovering OrynKit Logo -->
+    <img class="orynkit-logo" src="OrynKit logo 2 (with text).png" alt="OrynKit Logo">
+
+    <h1>Welcome to OrynKit – SOP Assistant (Pro)</h1>
+    <p>Thank you for your purchase! You now have unlimited access to OrynKit's SOP generator and bonus templates.</p>
+    <p>Download your free starter SOP templates below:</p>
+    <a class="download-btn" href="Marketing_SOP_Template.pdf" download>Download Marketing SOP</a>
+    <a class="download-btn" href="Onboarding_SOP_Template.pdf" download>Download Onboarding SOP</a>
+    <a class="download-btn" href="Operations_SOP_Template.pdf" download>Download Operations SOP</a>
+    <footer>
+      &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
+    </footer>
+  </div>
+</body>
+</html>
