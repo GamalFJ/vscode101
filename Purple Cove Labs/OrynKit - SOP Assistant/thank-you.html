@@ -1,76 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPY9RPG4M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7EPY9RPG4M');
-    gtag('event', 'sop_generated', {
-      'event_category': 'conversion',
-      'event_label': 'thank_you_page_view'
-    });
-  </script>
-
-  <!-- FAVICONS -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#0b0b14">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b14">
+  <meta name="msapplication-TileColor" content="#0b0b14">
   <title>Thank You – OrynKit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-    html, body {
+    body {
       margin: 0;
-      height: 100%;
       font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1a082d, #0b0b14);
       color: #fff;
-      overflow-x: hidden;
-      background: radial-gradient(circle at 30% 30%, #1a082d, #0b0b14 60%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: scroll; /* iOS-friendly */
-    }
-
-    /* Background Overlay */
-    .bg-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(circle, rgba(88, 0, 153, 0.4), transparent 70%) -200px -200px no-repeat,
-        radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%) calc(100% + 200px) calc(100% + 200px) no-repeat;
-      background-size: 600px 600px, 500px 500px;
-      filter: blur(100px);
-      z-index: -1;
-      pointer-events: none;
+      text-align: center;
+      padding: 4rem 1.5rem;
     }
 
     .container {
-      text-align: center;
-      padding: 4rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(24,24,40,0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
     }
 
     h1 {
       font-size: 2.5rem;
       font-weight: 700;
-      background: linear-gradient(90deg, #a855f7, #6a0dad);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
+      color: #a855f7;
       margin-bottom: 1rem;
     }
 
@@ -81,16 +40,16 @@
     }
 
     .cta-btn {
-      background: #a855f7;
+      background: #6a0dad;
       border: none;
       padding: 1rem 2rem;
       font-size: 1rem;
-      border-radius: 50px;
+      border-radius: 8px;
       cursor: pointer;
       color: #fff;
       font-weight: 600;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
     }
 
     .cta-btn:hover {
@@ -98,13 +57,52 @@
       box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
     }
 
-    footer {
+    .upsell-box {
       text-align: center;
+      padding: 2rem;
+      background: rgba(24, 24, 40, 0.9);
+      border-radius: 12px;
+      margin: 3rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .upsell-box h2 {
+      font-size: 2rem;
+      color: #a855f7;
+      margin-bottom: 1rem;
+    }
+
+    .upsell-box p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .upsell-box button {
+      background: #6a0dad;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    }
+
+    .upsell-box button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
+    }
+
+    footer {
+      margin-top: 2rem;
       padding: 1.5rem;
       font-size: 0.9rem;
       background: #0b0b14;
       color: #aaa;
-      margin-top: 2rem;
     }
 
     footer span {
@@ -113,21 +111,18 @@
   </style>
 </head>
 <body>
-  <div class="bg-overlay"></div> <!-- iOS-friendly background -->
-
   <div class="container">
     <h1>Thank You!</h1>
     <p>Your SOP will be sent to your email shortly.</p>
     <button class="cta-btn" onclick="window.location.href='index.html'">Return to Home</button>
   </div>
-  <section style="text-align: center; padding: 2rem; background: rgba(24, 24, 40, 0.9); border-radius: 12px; margin: 3rem auto; max-width: 800px; box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);">
-  <h2 style="color: #a855f7;">Want Unlimited SOPs?</h2>
-  <p style="color: #ccc; margin: 1rem 0;">Upgrade to <strong>OrynKit – SOP Pro</strong> for just <strong>$14.99/month</strong>.</p>
-  <button style="background: #6a0dad; border: none; padding: 1rem 2rem; font-size: 1rem; border-radius: 8px; cursor: pointer; color: #fff; font-weight: 600;" onclick="window.location.href='https://gumroad.com/'">
-    Upgrade Now
-  </button>
-</section>
 
+  <div class="upsell-box">
+    <h2>Want Unlimited SOPs?</h2>
+    <p>Upgrade to <strong>OrynKit – SOP Pro</strong> for just <strong>$59 lifetime</strong>.</p>
+    <a href='https://purplecovelabs.gumroad.com/l/mwcbq' target="_blank" class="cta-btn">Upgrade Now (Pre-Order)</a>
+  </div>
+<!-- gumroad.com/l/mwcbq -->
   <footer>
     &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
   </footer>

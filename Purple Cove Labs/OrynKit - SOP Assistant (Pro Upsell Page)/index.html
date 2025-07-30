@@ -1,0 +1,178 @@
+<!-- ✅ SPACING FIX APPLIED TO CHECKMARK BULLETS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b14">
+  <meta name="msapplication-TileColor" content="#0b0b14">
+  <title>Upgrade to OrynKit Pro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1a082d, #0b0b14);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(24, 24, 40, 0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .logo {
+      width: 90px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .orynkit-logo {
+      width: 150px;
+      margin: 8rem auto 2rem auto;
+      display: block;
+      animation: floatLogo 6s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+      border-radius: 50%;
+    }
+
+    .orynkit-logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.9);
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.9); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #a855f7;
+      margin-bottom: 1rem;
+    }
+
+    h1 span {
+      color: #fff;
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .features {
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      text-align: left;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin: 0.5rem 0;
+      padding-left: 2rem; /* Increased left padding */
+      position: relative;
+    }
+
+    .features li::before {
+      content: "✅ "; /* Added space after emoji */
+      position: absolute;
+      left: 0;
+    }
+
+    .cta-button {
+      background: #6a0dad;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      background: #0b0b14;
+      color: #aaa;
+      text-align: center;
+    }
+
+    footer span {
+      color: #a855f7;
+    }
+
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .orynkit-logo { width: 100px; margin-top: 6rem; }
+      .cta-button { font-size: 1rem; padding: 0.8rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs Logo" />
+    <img class="orynkit-logo" src="OrynKit logo 2 (with text).png" alt="OrynKit Logo" />
+
+    <h1>Unlock Unlimited SOPs with <br> <span>OrynKit - Pro<br></span>One-Time Lifetime Access</h1>
+    <p class="description">
+      You’ve hit your free limit. But the good news? You can unlock unlimited SOP generations, downloadable templates, and future upgrades — all for a one-time payment.
+    </p>
+
+    <div class="features">
+      <ul>
+        <li>Unlimited SOP generations</li>
+        <li>Downloadable SOP templates (coming soon)</li>
+        <li>Lifetime access to all future updates</li>
+        <li>Priority support & feature requests</li>
+        <li>Early access to the Oryn AI Agent Builder Kit</li>
+      </ul>
+    </div>
+
+    <a href="https://purplecovelabs.gumroad.com/l/mwcbq" target="_blank" class="cta-button">Upgrade Now – $59 Lifetime Access</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
+  </footer>
+</body>
+</html>
