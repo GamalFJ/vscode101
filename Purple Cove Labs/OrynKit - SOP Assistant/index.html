@@ -302,10 +302,15 @@
   #pricing a:focus { outline: 2px solid var(--ring); outline-offset: 3px; }
 
   /* Mobile/responsive tweaks */
-  @media (max-width: 900px) { #pricing h2 { font-size: 32px; } }
-  @media (max-width: 640px) {
-    .pricing-cards { gap: 16px; }
-    .price-card { flex: 1 1 100% !important; max-width: 520px !important; margin: 0 auto; }
+    @media (max-width: 640px) {
+    /* Force single-column with explicit spacing */
+    .pricing-cards { gap: 0 !important; }
+    .price-card {
+      flex: 1 1 100% !important;
+      max-width: 520px !important;
+      margin: 0 auto 20px;   /* <- adds space between stacked cards */
+    }
+    .price-card:last-child { margin-bottom: 0; }
     .price-card .price-inner { padding: 22px; }
   }
 </style>
