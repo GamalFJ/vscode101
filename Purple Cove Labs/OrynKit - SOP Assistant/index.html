@@ -315,6 +315,29 @@
   }
 </style>
 
+<style>
+  /* 1) Disable hover-scale on touch devices to prevent overlap */
+  @media (hover: none), (pointer: coarse) {
+    .price-card:hover .price-inner {
+      transform: none !important;               /* no growth */
+      box-shadow: 0 12px 36px rgba(168,85,247,.45) !important; /* keep a subtle glow */
+      border-color: rgba(192,132,252,.45) !important;
+    }
+  }
+
+  /* 2) Mobile spacing: remove flex gap (some mobile browsers bug) and use margins */
+  @media (max-width: 640px) {
+    .pricing-cards { gap: 0 !important; }
+    .price-card {
+      flex: 1 1 100% !important;
+      max-width: 520px !important;
+      margin: 0 auto 24px !important;  /* adds breathing room between cards */
+    }
+    .price-card:last-child { margin-bottom: 0 !important; }
+  }
+</style>
+
+
 
   <section id="form-section">
     <h2>Try It Now</h2>
