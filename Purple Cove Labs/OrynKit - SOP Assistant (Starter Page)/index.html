@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OrynKit — Starter Plan</title>
+<meta name="description" content="OrynKit Starter: 10 SOPs, priority speed, email delivery, and 1 PDF download. Start fast, upgrade anytime." />
+
+<!-- Favicons / PWA (put files in same folder as this HTML) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/apple-touch-icon.png"> <!-- set to: apple-touch-icon.png -->
+<link rel="icon" type="image/png" sizes="32x32" href="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/favicon_32.png"> <!-- set to: favicon-32x32.png -->
+<link rel="icon" type="image/png" sizes="16x16" href="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/favicon_16.png"> <!-- set to: favicon-16x16.png -->
+<link rel="manifest" href="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/site.webmanifest"> <!-- set to: site.webmanifest -->
+
+<meta name="msapplication-TileColor" content="#120029">
+<meta name="msapplication-config" content=""> <!-- optional: set to browserconfig.xml -->
+<meta name="theme-color" content="#120029">
+
+<style>
+  :root{
+    --bg:#120029; --ink:#EAD7FF; --muted:#c9b2ff;
+    --card:#1b0140; --line:rgba(192,132,252,.35);
+    --accent:#C084FC; --accent2:#A855F7; --ring:#7c3aed;
+    --ok:#9ef8d1; --warn:#ffd28f;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(192,132,252,.25), transparent),
+                radial-gradient(1200px 700px at 100% 10%, rgba(168,85,247,.2), transparent),
+                var(--bg);
+    color:var(--ink);
+  }
+  a{color:inherit}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 100px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .back{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
+  .back:hover{filter:brightness(1.05)}
+  .brandbar{display:flex;align-items:center;gap:10px}
+  .brandbar img{height: 150px;width:auto;display:block;border-radius:72px;}
+  .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(192,132,252,.12);
+    border:1px solid var(--line); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px}
+
+  .hero{display:grid;gap:16px;place-items:center;text-align:center;margin:18px 0 26px}
+  .hero h1{font-size:42px;line-height:1.1;margin:6px 0 8px}
+  .price{font-size:44px;font-weight:800;margin:10px 0 0}
+  .note{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;
+    box-shadow:0 16px 48px rgba(0,0,0,.25);padding:26px}
+  .grid{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+  .list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .list li{display:flex;gap:8px;align-items:flex-start}
+  .k{min-width:18px;text-align:center;font-weight:700}
+  .yes .k{color:#14f195}
+  .no .k{color:#ff7b7b}
+  .soon .k{color:#ffd28f}
+
+  .cta{display:inline-block;text-decoration:none;text-align:center;
+    padding:14px 22px;border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#090016;border:1px solid rgba(234,215,255,.45);
+    box-shadow:0 10px 28px rgba(168,85,247,.45)}
+  .cta:hover{transform:translateY(-1px);filter:brightness(1.05);transition:.15s all}
+  .cta:focus{outline:2px solid var(--ring);outline-offset:3px}
+
+  .steps{counter-reset:step}
+  .steps li{counter-increment:step}
+  .steps li .k{background:rgba(192,132,252,.18);border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+  .steps li .k::before{content:counter(step)}
+
+  .faq details{background:rgba(192,132,252,.08);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .faq details[open]{background:rgba(192,132,252,.12)}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq p{color:var(--muted);margin:8px 0 0}
+
+  /* sticky checkout bar */
+  .buybar{position:fixed;left:0;right:0;bottom:0;background:rgba(18,0,41,.8);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);padding:10px 16px}
+  .buybar .inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between}
+  .buybar .price{font-size:22px;margin:0}
+  .buybar .sub{color:var(--muted);font-size:12px;margin:0}
+  .appicon{height:48px;width:48px;border-radius:6px;display:block}
+
+  /* mobile */
+  @media (max-width:900px){.hero h1{font-size:36px}}
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .wrap{padding-bottom:120px}
+  }
+
+  /* disable hover grow on touch devices */
+  @media (hover:none),(pointer:coarse){
+    .cta:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="https://orynkitsop.netlify.app//#pricing" class="back">← Back to pricing</a>
+
+      <!-- CENTER BRAND: set src to your OrynKit logo file (e.g. OrynKit logo 2 (with text).png) -->
+      <div class="brandbar">
+        <img src="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/OrynKit logo 2 (with text).png" alt="OrynKit logo"> <!-- set src to your OrynKit logo file -->
+      </div>
+
+      <span class="badge">OrynKit • Starter</span>
+    </div>
+
+    <section class="hero">
+      <h1>Starter Plan</h1>
+      <p class="note">10 SOPs • Priority speed • Email delivery • <strong>1 PDF download</strong></p>
+      <div class="price">$19.99</div>
+      <p class="note">Billed once • Renew manually</p>
+      <a class="cta" data-plan="starter" href="https://gum.co/orynkit-starter">Upgrade — $19.99</a>
+    </section>
+
+    <section class="grid">
+      <!-- What's included -->
+      <div class="card">
+        <h2 style="margin-top:0">What you get</h2>
+        <ul class="list">
+          <li class="yes"><span class="k">✅</span> Core SOP generation tailored to your request</li>
+          <li class="yes"><span class="k">✅</span> Email delivery to your inbox</li>
+          <li class="yes"><span class="k">✅</span> Priority processing</li>
+          <li class="yes"><span class="k">✅</span> <strong>1 PDF download</strong> of any generated SOP</li>
+        </ul>
+        <hr style="border:1px solid var(--line);margin:18px 0">
+        <h3 style="margin:0 0 10px">Not included</h3>
+        <ul class="list">
+          <li class="no"><span class="k">✖</span> Branded outputs</li>
+          <li class="no"><span class="k">✖</span> Notion export</li>
+          <li class="no"><span class="k">✖</span> Early access perks</li>
+        </ul>
+        <p class="note" style="margin-top:16px">Need more? Go Lifetime for unlimited SOPs and early access perks.</p>
+      </div>
+
+      <!-- How it works -->
+      <div class="card">
+        <h2 style="margin-top:0">How it works</h2>
+        <ul class="list steps">
+          <li><span class="k"></span> Submit your request via the OrynKit form.</li>
+          <li><span class="k"></span> OrynKit generates the SOP and queues it with priority.</li>
+          <li><span class="k"></span> You receive it by email. Use your included <strong>1× PDF download</strong> anytime.</li>
+        </ul>
+        <div style="margin-top:20px">
+          <a class="cta" data-plan="starter" href="https://gum.co/orynkit-starter">Get Starter — $19.99</a>
+        </div>
+        <p class="note" style="margin-top:10px">Questions? See FAQs below or reply to your SOP email.</p>
+      </div>
+    </section>
+
+    <!-- OPTIONAL: show Purple Cove Labs logo somewhere (e.g., footer/topbar right) -->
+
+    <!-- FAQs -->
+    <section class="faq" style="margin-top:26px;display:grid;gap:12px">
+      <details>
+        <summary>How do the 10 SOPs work?</summary>
+        <p>You can request up to 10 unique SOPs during your Starter access period. They’re processed with priority to land in your inbox faster.</p>
+      </details>
+      <details>
+        <summary>What about the 1 PDF download?</summary>
+        <p>You can export any one of your generated SOPs as a PDF. If you need multiple PDFs or branded/Notion exports, upgrade to Lifetime.</p>
+      </details>
+      <details>
+        <summary>Does Starter renew automatically?</summary>
+        <p>No. It’s a manual, one-time purchase. Renew when you need more SOPs—no lock-in.</p>
+      </details>
+      <details>
+        <summary>Can I switch to Lifetime later?</summary>
+        <p>Yes. You can upgrade to the Lifetime plan anytime for unlimited SOPs and early access to the Oryn AI Agent Builder Kit.</p>
+      </details>
+    </section>
+
+  </div>
+
+  <!-- Sticky checkout bar -->
+  <div class="buybar">
+    <div class="inner">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="/Purple Cove Labs/OrynKit - SOP Assistant (Starter Page)/android-chrome-192x192.png" alt="OrynKit icon" class="appicon"> <!-- set src to a square icon (e.g., android-chrome-192x192.png or favicon-32x32.png) -->
+        <div>
+          <p class="price" style="font-weight:800">$19.99</p>
+          <p class="sub">Starter • 10 SOPs • Priority • 1 PDF download</p>
+        </div>
+      </div>
+      <a class="cta" data-plan="starter" href="https://gum.co/orynkit-starter">Upgrade — $19.99</a>
+    </div>
+  </div>
+</body>
+</html>

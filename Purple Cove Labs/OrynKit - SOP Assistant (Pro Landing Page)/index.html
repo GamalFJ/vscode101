@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- FAVICONS -->
+  <!-- Favicons / PWA (kept your original filenames) -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -9,112 +9,189 @@
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#0b0b14">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrynKit – SOP Pro Access</title>
+  <meta name="theme-color" content="#120029">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrynKit — SOP Pro Access</title>
+  <meta name="description" content="OrynKit Pro: Unlimited SOPs, priority speed, email delivery, early access perks, and bonus templates." />
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1a082d, #0b0b14);
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
+    :root{
+      --bg:#120029; --ink:#EAD7FF; --muted:#c9b2ff;
+      --card:#1b0140; --line:rgba(192,132,252,.35);
+      --accent:#C084FC; --accent2:#A855F7; --ring:#7c3aed;
+      --ok:#9ef8d1; --warn:#ffd28f;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(24,24,40,0.9);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-      position: relative;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(192,132,252,.25), transparent),
+                  radial-gradient(1200px 700px at 100% 10%, rgba(168,85,247,.2), transparent),
+                  var(--bg);
+      color:var(--ink);
     }
-    h1 {
-      color: #a855f7;
-      font-size: 2.2rem;
-    }
-    p {
-      color: #ccc;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    a{color:inherit}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 120px}
+
+    .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .back{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
+    .back:hover{filter:brightness(1.05)}
+    .brandbar{display:flex;align-items:center;gap:10px}
+    .brandbar img{height:28px;width:auto;display:block}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(192,132,252,.12);
+      border:1px solid var(--line); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px}
+
+    .hero{display:grid;gap:12px;place-items:center;text-align:center;margin:18px 0 26px}
+    .hero h1{font-size:42px;line-height:1.1;margin:6px 0 8px}
+    .price{font-size:44px;font-weight:800;margin:10px 0 0}
+    .note{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+    .card{background:var(--card);border:1px solid var(--line);border-radius:22px;
+      box-shadow:0 16px 48px rgba(0,0,0,.25);padding:26px}
+    .grid{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+
+    .list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .list li{display:flex;gap:8px;align-items:flex-start}
+    .k{min-width:18px;text-align:center;font-weight:700}
+    .yes .k{color:#14f195}
+    .no .k{color:#ff7b7b}
+    .soon .k{color:#ffd28f}
+
+    .cta{display:inline-block;text-decoration:none;text-align:center;
+      padding:14px 22px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#090016;border:1px solid rgba(234,215,255,.45);
+      box-shadow:0 10px 28px rgba(168,85,247,.45)}
+    .cta:hover{transform:translateY(-1px);filter:brightness(1.05);transition:.15s all}
+    .cta:focus{outline:2px solid var(--ring);outline-offset:3px}
+
+    .downloads{display:grid;gap:12px}
+    .dl{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(192,132,252,.08);
+      border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+    .dl a{font-weight:700;text-decoration:none}
+    .dl .meta{color:var(--muted);font-size:12px}
+
+    /* sticky info bar */
+    .infobar{position:fixed;left:0;right:0;bottom:0;background:rgba(18,0,41,.8);backdrop-filter:blur(8px);
+      border-top:1px solid var(--line);padding:10px 16px}
+    .infobar .inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between}
+    .infobar .sub{color:var(--muted);font-size:12px;margin:0}
+    .appicon{height:28px;width:28px;border-radius:6px;display:block}
+
+    /* mobile */
+    @media (max-width:900px){.hero h1{font-size:36px}}
+    @media (max-width:720px){
+      .grid{grid-template-columns:1fr}
+      .wrap{padding-bottom:140px}
     }
 
-     footer span {
-      color: #a855f7;
-    }
-    
-    a.download-btn {
-      display: inline-block;
-      background: #6a0dad;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      margin: 0.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    a.download-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    /* Logos */
-    .logo {
-      width: 90px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-    .orynkit-logo {
-      width: 150px;
-      margin: 8rem auto 2rem auto; /* Increased top margin for spacing */
-      display: block;
-      animation: floatLogo 6s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
-      border-radius: 50%;
-    }
-    .orynkit-logo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(168, 85, 247, 0.9);
-    }
-
-    /* Animations */
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
-      50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.9); }
+    /* disable hover grow on touch devices */
+    @media (hover:none),(pointer:coarse){
+      .cta:hover{transform:none}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Purple Cove Labs Logo -->
-    <img class="logo" src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs Logo">
 
-    <!-- Hovering OrynKit Logo -->
-    <img class="orynkit-logo" src="OrynKit logo 2 (with text).png" alt="OrynKit Logo">
+  <div class="wrap">
 
-    <h1>Welcome to OrynKit – SOP Assistant (Pro)</h1>
-    <p>Thank you for your purchase! You now have unlimited access to OrynKit's SOP generator and bonus templates.</p>
-    <p>Download your free starter SOP templates below:</p>
-    <a class="download-btn" href="Marketing_SOP_Template.pdf" download>Download Marketing SOP</a>
-    <a class="download-btn" href="Onboarding_SOP_Template.pdf" download>Download Onboarding SOP</a>
-    <a class="download-btn" href="Operations_SOP_Template.pdf" download>Download Operations SOP</a>
-    <footer>
-      &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
-    </footer>
+    <div class="topbar">
+      <a href="https://orynkitsop.netlify.app//#pricing" class="back">← Back to site</a>
+
+      <!-- Center brand (uses your uploaded OrynKit logo file) -->
+      <div class="brandbar">
+        <img src="OrynKit%20logo%202%20(with%20text).png" alt="OrynKit logo">
+      </div>
+
+      <span class="badge">OrynKit • Pro</span>
+    </div>
+
+    <section class="hero">
+      <h1>Welcome to OrynKit <br> • <br>SOP Assistant <span style="opacity:.9">(Pro)</span></h1>
+      <p class="note">Thank you for your purchase! Your Pro access is active: <strong>Unlimited SOPs</strong>, priority speed, email delivery, and bonus templates.</p>
+      <p class="note">Need a new SOP now? Head back to the form and submit — you’re first in line.</p>
+      <div style="margin-top:8px">
+        <a class="cta" href="https://tally.so/r/waqebb">Open OrynKit Form</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- What you have (Pro) -->
+      <div class="card">
+        <h2 style="margin-top:0">What you have</h2>
+        <ul class="list">
+          <li class="yes"><span class="k">✅</span> <strong>Unlimited</strong> SOP generation</li>
+          <li class="yes"><span class="k">✅</span> Priority processing</li>
+          <li class="yes"><span class="k">✅</span> Email delivery to your inbox</li>
+          <li class="yes"><span class="k">✅</span> Early access to <strong>Oryn AI Agent Builder Kit</strong></li>
+        </ul>
+        <hr style="border:1px solid var(--line);margin:18px 0">
+        <h3 style="margin:0 0 10px">Coming soon</h3>
+        <ul class="list">
+          <li class="soon"><span class="k">🕓</span> Branded outputs</li>
+          <li class="soon"><span class="k">🕓</span> PDF export</li>
+          <li class="soon"><span class="k">🕓</span> Notion export</li>
+        </ul>
+        <p class="note" style="margin-top:16px">These will unlock automatically for Pro users once released.</p>
+      </div>
+
+      <!-- Bonus templates (your original downloads) -->
+      <div class="card">
+        <h2 style="margin-top:0">Bonus templates</h2>
+        <div class="downloads">
+          <div class="dl">
+            <div>
+              <a href="Marketing_SOP_Template.pdf" download>Download Marketing SOP</a>
+              <div class="meta">PDF • Ready-to-use marketing checklist & flow</div>
+            </div>
+            <span class="badge" style="font-size:11px">Included</span>
+          </div>
+          <div class="dl">
+            <div>
+              <a href="Onboarding_SOP_Template.pdf" download>Download Onboarding SOP</a>
+              <div class="meta">PDF • New-hire onboarding steps & touchpoints</div>
+            </div>
+            <span class="badge" style="font-size:11px">Included</span>
+          </div>
+          <div class="dl">
+            <div>
+              <a href="Operations_SOP_Template.pdf" download>Download Operations SOP</a>
+              <div class="meta">PDF • Daily ops routines, quality checks</div>
+            </div>
+            <span class="badge" style="font-size:11px">Included</span>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="cta" href="https://tally.so/r/waqebb">Request a New SOP</a>
+        </div>
+        <p class="note" style="margin-top:10px">Want branded outputs or Notion? They’ll roll in automatically when shipped.</p>
+      </div>
+    </section>
+
+    <!-- Optional: brand credit -->
+    <div style="display:flex;justify-content:center;margin-top:26px;opacity:.9">
+      <img src="Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs" style="height:24px;width:auto">
+    </div>
+
   </div>
+
+  <!-- Sticky info bar -->
+  <div class="infobar">
+    <div class="inner">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="android-chrome-192x192.png" alt="OrynKit icon" class="appicon">
+        <div>
+          <p style="margin:0;font-weight:800">Pro Access Active</p>
+          <p class="sub">Unlimited SOPs • Priority speed • Early access</p>
+        </div>
+      </div>
+      <a class="cta" href="https://tally.so/r/waqebb">Open OrynKit</a>
+    </div>
+  </div>
+
 </body>
 </html>

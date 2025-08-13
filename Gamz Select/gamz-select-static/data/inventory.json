@@ -1,0 +1,42 @@
+[
+  {
+    "sku": "GS-EXPL-114270",
+    "slug": "rolex-explorer-114270",
+    "brand": "Rolex",
+    "model": "Explorer",
+    "reference": "114270",
+    "year": 2007,
+    "caseSize": 36,
+    "material": "Stainless Steel",
+    "movement": "Automatic",
+    "condition": "Excellent",
+    "price": 7850,
+    "boxPapers": "Box & Papers",
+    "warranty": "12 months Gamz Select Warranty",
+    "images": [
+      "assets/products/explorer-114270-1.jpg"
+    ],
+    "availability": "In Stock",
+    "notes": "Freshly serviced; sharp lugs; smooth bracelet."
+  },
+  {
+    "sku": "GS-SUB-16610",
+    "slug": "rolex-submariner-16610",
+    "brand": "Rolex",
+    "model": "Submariner Date",
+    "reference": "16610",
+    "year": 2005,
+    "caseSize": 40,
+    "material": "Stainless Steel",
+    "movement": "Automatic",
+    "condition": "Very Good",
+    "price": 9850,
+    "boxPapers": "Box",
+    "warranty": "6 months Gamz Select Warranty",
+    "images": [
+      "assets/products/sub-16610-1.jpg"
+    ],
+    "availability": "In Stock",
+    "notes": "Light wear; strong amplitude; bezel action crisp."
+  }
+]

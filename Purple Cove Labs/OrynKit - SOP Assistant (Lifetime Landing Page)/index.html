@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OrynKit — Lifetime Plan</title>
+<meta name="description" content="OrynKit Lifetime: One-time purchase for unlimited SOPs, email delivery, and early access to the Oryn AI Agent Builder Kit." />
+
+<!-- Favicons / PWA — using your current absolute paths -->
+<link rel="apple-touch-icon" sizes="180x180" href="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/favicon_32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/favicon_16.png">
+<link rel="manifest" href="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/site.webmanifest">
+<meta name="msapplication-config" content="">
+<meta name="theme-color" content="#120029" />
+
+<style>
+  :root{
+    --bg:#120029; --ink:#EAD7FF; --muted:#c9b2ff;
+    --card:#1b0140; --line:rgba(192,132,252,.35);
+    --accent:#C084FC; --accent2:#A855F7; --ring:#7c3aed;
+    --ok:#0dee18; --warn:#e7ff0c; --danger:#ff7b7b;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(192,132,252,.25), transparent),
+                radial-gradient(1200px 700px at 100% 10%, rgba(168,85,247,.2), transparent),
+                var(--bg);
+    color:var(--ink);
+  }
+  a{color:inherit}
+
+  /* URGENCY RIBBON */
+  .deal-ribbon{
+    background:linear-gradient(90deg, rgba(192,132,252,.18), rgba(168,85,247,.22));
+    border-bottom:1px solid var(--line);
+    color:var(--ink);
+    text-align:center;
+    padding:10px 14px;
+    font-weight:600;
+  }
+  .deal-ribbon .sub{color:var(--muted);font-weight:500}
+  .deal-ribbon strong{color:var(--warn);} /* yellow headline */
+
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 120px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .back{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
+  .back:hover{filter:brightness(1.05)}
+  .brandbar{display:flex;align-items:center;gap:10px}
+  .brandbar img{height: 150px;width:auto;display:block;border-radius:72px;}
+  .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(192,132,252,.12);
+    border:1px solid var(--line); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px}
+
+  .hero{display:grid;gap:14px;place-items:center;text-align:center;margin:18px 0 26px}
+  .hero h1{font-size:42px;line-height:1.1;margin:6px 0 8px}
+  .price{font-size:44px;font-weight:800;margin:10px 0 0}
+  .note{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+  /* urgency pills */
+  .urgency-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:4px}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(192,132,252,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
+  .pill.hot{background:rgba(255,123,123,.12);border-color:rgba(255,123,123,.45);color:#ffd2d2}
+
+  /* seats tracker */
+  .seatbar{display:flex;flex-direction:column;gap:6px;max-width:520px;margin:6px auto 0}
+  .seatbar.hide{display:none}
+  .seatbar .track{height:10px;background:rgba(192,132,252,.18);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .seatbar .fill{height:100%;width:40%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .seatbar .label{font-size:12px;color:var(--muted);text-align:center}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;
+    box-shadow:0 16px 48px rgba(0,0,0,.25);padding:26px}
+  .grid{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+  .list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .list li{display:flex;gap:8px;align-items:flex-start}
+  .k{min-width:18px;text-align:center;font-weight:700}
+  .yes .k{color:#14f195}
+  .no .k{color:#ff7b7b}
+  .soon .k{color:#ffd28f}
+
+  .cta{display:inline-block;text-decoration:none;text-align:center;
+    padding:14px 22px;border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#090016;border:1px solid rgba(234,215,255,.45);
+    box-shadow:0 10px 28px rgba(168,85,247,.45)}
+  .cta:hover{transform:translateY(-1px);filter:brightness(1.05);transition:.15s all}
+  .cta:focus{outline:2px solid var(--ring);outline-offset:3px}
+
+  .steps{counter-reset:step}
+  .steps li{counter-increment:step}
+  .steps li .k{background:rgba(192,132,252,.18);border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+  .steps li .k::before{content:counter(step)}
+
+  .faq details{background:rgba(192,132,252,.08);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .faq details[open]{background:rgba(192,132,252,.12)}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq p{color:var(--muted);margin:8px 0 0}
+
+  /* sticky checkout bar */
+  .buybar{position:fixed;left:0;right:0;bottom:0;background:rgba(18,0,41,.8);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);padding:10px 16px}
+  .buybar .inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between}
+  .buybar .price{font-size:22px;margin:0;color:var(--ok);} /* green price */
+  .buybar .sub{color:var(--muted);font-size:12px;margin:0}
+  .appicon{height: 48px;width:48px;border-radius:6px;display:block}
+
+  /* mobile */
+  @media (max-width:900px){.hero h1{font-size:36px}}
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .wrap{padding-bottom:140px}
+  }
+
+  /* disable hover grow on touch devices */
+  @media (hover:none),(pointer:coarse){
+    .cta:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+  <!-- URGENCY RIBBON -->
+  <div class="deal-ribbon">
+    <strong>Limited-time deal</strong> <span class="sub">• Seats are limited</span>
+  </div>
+
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="https://orynkitsop.netlify.app//#pricing" class="back">← Back to pricing</a>
+
+      <!-- CENTER BRAND: using your provided logo path -->
+      <div class="brandbar">
+        <img src="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/OrynKit logo 2 (with text).png" alt="OrynKit logo">
+      </div>
+
+      <span class="badge">OrynKit • Lifetime</span>
+    </div>
+
+    <section class="hero">
+      <!-- Urgency pills -->
+      <div class="urgency-pills">
+        <span class="pill hot">Limited-time</span>
+        <span id="seats-pill" class="pill">Seats limited</span>
+        <span id="countdown" class="pill" data-deadline="">Ends soon</span>
+      </div>
+
+      <h1>Lifetime Plan</h1>
+      <p class="note">One-time purchase • <strong>Unlimited SOPs</strong> • Email delivery • Early access to Oryn AI Agent Builder Kit</p>
+      <div class="price">$59.99</div>
+      <p class="note">*Prices in USD. “Coming soon” features unlock automatically for Lifetime users when released.</p>
+
+      <!-- Optional seats tracker -->
+      <div id="seatbar" class="seatbar" data-total="" data-left="">
+        <div class="track"><div class="fill" style="width:40%"></div></div>
+        <div class="label" id="seatlabel">Seats limited</div>
+      </div>
+
+      <a class="cta" data-plan="lifetime" href="https://purplecovelabs.gumroad.com/l/mwcbq">Get Lifetime — $59.99</a>
+    </section>
+
+    <section class="grid">
+      <!-- What's included -->
+      <div class="card">
+        <h2 style="margin-top:0">What you get</h2>
+        <ul class="list">
+          <li class="yes"><span class="k">✅</span> <strong>Unlimited</strong> SOP generation</li>
+          <li class="yes"><span class="k">✅</span> Email delivery to your inbox</li>
+          <li class="yes"><span class="k">✅</span> Early access to <strong>Oryn AI Agent Builder Kit</strong></li>
+        </ul>
+        <hr style="border:1px solid var(--line);margin:18px 0">
+        <h3 style="margin:0 0 10px">Coming soon (auto-unlock)</h3>
+        <ul class="list">
+          <li class="soon"><span class="k">🕓</span> Branded outputs</li>
+          <li class="soon"><span class="k">🕓</span> PDF download</li>
+          <li class="soon"><span class="k">🕓</span> Notion download</li>
+        </ul>
+        <p class="note" style="margin-top:16px">You’ll get these the moment they ship — no extra cost.</p>
+      </div>
+
+      <!-- How it works -->
+      <div class="card">
+        <h2 style="margin-top:0">How it works</h2>
+        <ul class="list steps">
+          <li><span class="k"></span> Purchase Lifetime and get instant confirmation.</li>
+          <li><span class="k"></span> Submit SOP requests anytime — you’re unlimited.</li>
+          <li><span class="k"></span> Receive your SOPs by email; new features unlock automatically.</li>
+        </ul>
+        <div style="margin-top:20px">
+          <a class="cta" data-plan="lifetime" href="https://purplecovelabs.gumroad.com/l/mwcbq">Get Lifetime — $59.99</a>
+        </div>
+        <p class="note" style="margin-top:10px">Questions? See FAQs below or reply to any SOP email.</p>
+      </div>
+    </section>
+
+    <!-- FAQs (added) -->
+    <section class="faq" style="margin-top:26px;display:grid;gap:12px">
+      <details>
+        <summary>Is Lifetime really unlimited?</summary>
+        <p>Yes — no monthly cap. Submit SOP requests whenever you need them.</p>
+      </details>
+      <details>
+        <summary>What does “early access” include?</summary>
+        <p>Hands-on access to the Oryn AI Agent Builder Kit ahead of public release, plus feature previews as they’re ready.</p>
+      </details>
+      <details>
+        <summary>Do I get branded outputs and exports?</summary>
+        <p>They’re listed as “coming soon.” As a Lifetime user, they’ll unlock automatically when shipped.</p>
+      </details>
+      <details>
+        <summary>Can I upgrade from Starter?</summary>
+        <p>Absolutely. You can move to Lifetime anytime — it’s a one-time purchase that unlocks unlimited SOPs.</p>
+      </details>
+      <details>
+        <summary>Is this a limited-time, limited-seat deal?</summary>
+        <p>Yes. This Lifetime offer is time-bound and seat-limited. If the seats tracker is visible, it reflects the remaining availability.</p>
+      </details>
+    </section>
+
+  </div>
+
+  <!-- Sticky checkout bar -->
+  <div class="buybar">
+    <div class="inner">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="/Purple Cove Labs/OrynKit - SOP Assistant (Lifetime Landing Page)/android-chrome-192x192.png" alt="OrynKit icon" class="appicon">
+        <div>
+          <p class="price" style="font-weight:800">$59.99</p>
+          <p class="sub">Limited-time • Seats limited • Lifetime access</p>
+        </div>
+      </div>
+      <a class="cta" data-plan="lifetime" href="https://purplecovelabs.gumroad.com/l/mwcbq">Get Lifetime — $59.99</a>
+    </div>
+  </div>
+
+<script>
+/* ===== Optional urgency logic =====
+   1) Set data-deadline on #countdown, e.g. 2025-08-31T23:59:00-04:00
+   2) Set data-total and data-left on #seatbar, e.g. data-total="100" data-left="17"
+   If not set, components fall back to generic text.
+*/
+(function(){
+  // Countdown
+  var cd = document.getElementById('countdown');
+  if (cd && cd.dataset.deadline) {
+    var end = new Date(cd.dataset.deadline).getTime();
+    if (!isNaN(end)) {
+      var tick = function(){
+        var now = Date.now();
+        var diff = end - now;
+        if (diff <= 0) {
+          cd.textContent = 'Ending now';
+          clearInterval(timer);
+          return;
+        }
+        var d = Math.floor(diff/86400000);
+        var h = Math.floor((diff%86400000)/3600000);
+        var m = Math.floor((diff%3600000)/60000);
+        cd.textContent = (d>0? d+'d ':'') + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm left';
+      };
+      tick();
+      var timer = setInterval(tick, 30000);
+    }
+  }
+
+  // Seats tracker
+  var bar = document.getElementById('seatbar');
+  var pill = document.getElementById('seats-pill');
+  var lbl = document.getElementById('seatlabel');
+  if (bar) {
+    var total = parseInt(bar.dataset.total,10);
+    var left  = parseInt(bar.dataset.left,10);
+    if (!isNaN(total) && !isNaN(left) && total > 0 && left >= 0 && left <= total) {
+      var pct = Math.max(0, Math.min(100, ((total-left)/total)*100));
+      bar.querySelector('.fill').style.width = pct + '%';
+      var msg = (left <= Math.max(1, Math.round(total*0.05))) ? '⚠ Only ' + left + ' seats left' : left + ' seats left';
+      lbl.textContent = msg;
+      if (pill) pill.textContent = msg;
+    } else {
+      bar.classList.add('hide'); // hide if not configured
+      if (pill) pill.textContent = 'Seats limited';
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
