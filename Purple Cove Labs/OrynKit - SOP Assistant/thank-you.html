@@ -1,130 +1,314 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0b14">
-  <meta name="msapplication-TileColor" content="#0b0b14">
-  <title>Thank You – OrynKit</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <meta charset="utf-8" />
+  <!-- Mobile-friendly viewport + notch support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Thank You — OrynKit</title>
+  <meta name="description" content="Thank you — your SOP is on the way. Watch your inbox and check spam if needed." />
+  <meta name="theme-color" content="#120029" />
+  <meta name="msapplication-TileColor" content="#120029" />
+  <meta name="format-detection" content="telephone=no, email=no, address=no" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #1a082d, #0b0b14);
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1.5rem;
+    /* ---------- OrynKit Brand Tokens ---------- */
+    :root{
+      --bg:#120029; --ink:#EAD7FF; --muted:#C9B2FF;
+      --card:#1B0140; --line:rgba(192,132,252,.35);
+      --accent:#C084FC; --accent2:#A855F7; --ring:#7C3AED;
+      --ok:#14f195; --warn:#FFD28F; --no:#ff7b7b;
+      --radius:22px; --radius-sm:12px; --shadow:0 16px 48px rgba(0,0,0,.25);
+      --font: Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--font); color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(192,132,252,.25), transparent),
+        radial-gradient(1200px 700px at 100% 10%, rgba(168,85,247,.20), transparent),
+        var(--bg);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 18px calc(80px + env(safe-area-inset-bottom));
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(24,24,40,0.9);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    /* Topbar (no logo) */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      margin-bottom:16px; position:relative; min-height:44px;
+    }
+    .back{
+      color:var(--muted); text-decoration:none; border:1px solid var(--line);
+      padding:10px 12px; border-radius:12px
+    }
+    .back:hover{filter:brightness(1.05)}
+    .topbar .badge{
+      position:absolute; right:0; top:50%; transform:translateY(-50%);
+      display:inline-flex; gap:8px; align-items:center;
+      background:rgba(192,132,252,.12); border:1px solid var(--line);
+      color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px
     }
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #a855f7;
-      margin-bottom: 1rem;
+    .card{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:26px
     }
 
-    p {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-bottom: 2rem;
+    .hero{
+      display:grid; gap:12px; place-items:center; text-align:center; margin:18px 0 22px
+    }
+    .hero h1{ margin:0; line-height:1.1; font-size:clamp(28px, 5vw, 38px); }
+    .hero .ok{
+      width:64px; height:64px; border-radius:18px; display:grid; place-items:center;
+      background:rgba(20,241,149,.12); border:1px solid var(--line);
+      box-shadow:0 10px 28px rgba(20,241,149,.18); margin-bottom:6px;
+    }
+    .hero .ok svg{ width:34px; height:34px; color:var(--ok) }
+    .hero p.note{ color:var(--muted); font-size:15px; margin:6px 0 0 }
+
+    /* Buttons */
+    .btn{
+      display:inline-block; text-align:center; padding:14px 22px; border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#090016; border:1px solid rgba(234,215,255,.45);
+      box-shadow:0 10px 28px rgba(168,85,247,.45);
+      transition:.15s transform,.15s filter,.15s box-shadow
+    }
+    .btn:hover{
+      transform:translateY(-1px); filter:brightness(1.06);
+      box-shadow:0 0 0 2px rgba(234,215,255,.55), 0 0 32px rgba(168,85,247,.75), 0 14px 36px rgba(168,85,247,.55)
+    }
+    .btn:focus{ outline:2px solid var(--ring); outline-offset:3px }
+
+    .grid{ display:grid; gap:20px; grid-template-columns:1fr 1fr }
+    .full{ grid-column:1 / -1 }
+
+    /* Next steps */
+    .steps{ list-style:none; margin:0; padding:0; display:grid; gap:12px }
+    .steps li{ display:flex; gap:10px; align-items:flex-start }
+    .steps .k{
+      background:rgba(192,132,252,.18); border:1px solid var(--line); border-radius:8px;
+      padding:2px 10px; font-weight:800; color:var(--muted)
     }
 
-    .cta-btn {
-      background: #6a0dad;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #fff;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    /* Tips — reformatted with icons */
+    .tips{ background:rgba(192,132,252,.08); border:1px solid var(--line); border-radius:16px; padding:16px }
+    .tips h3{ margin:0 0 8px }
+    .tips ul{ list-style:none; margin:0; padding:0; display:grid; gap:10px }
+    .tips li{ display:flex; gap:10px; align-items:flex-start; color:var(--muted) }
+    .tips .ico{ width:22px; height:22px; display:grid; place-items:center;
+      border-radius:8px; background:rgba(192,132,252,.16); border:1px solid var(--line); flex:0 0 22px }
+    .tips .ico svg{ width:14px; height:14px; color:var(--accent2) }
+
+    /* Upsell plans */
+    .plans{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .plan{background:rgba(192,132,252,.08);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .picon{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;
+      background:rgba(192,132,252,.16);border:1px solid var(--line);margin-bottom:8px;font-size:20px}
+    .plan h3{margin:0 0 4px}
+    .plan .sub{margin:0 0 12px;color:var(--muted);font-size:13px}
+    .flist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    .frow{display:flex;gap:10px;align-items:center}
+    .frow svg{width:18px;height:18px}
+    .frow.yes svg{color:var(--ok)}
+    .frow.soon svg{color:var(--warn)}
+    .soon-tag{margin-left:8px;padding:2px 8px;border-radius:8px;font-size:12px;
+      color:var(--warn);background:rgba(255,210,143,.12);border:1px solid var(--line)}
+    .actions{display:flex;justify-content:center;margin-top:12px}
+
+    /* Footer */
+    footer{
+      margin-top:26px; padding:18px;
+      text-align:center; color:var(--muted);
+      border-top:1px solid var(--line);
     }
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
+    /* Responsive tweaks */
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr } }
+    @media (max-width:720px){
+      .wrap{ padding-bottom:calc(100px + env(safe-area-inset-bottom)) }
+      .plans{ grid-template-columns:1fr }
     }
-
-    .upsell-box {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(24, 24, 40, 0.9);
-      border-radius: 12px;
-      margin: 3rem auto;
-      max-width: 800px;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-    }
-
-    .upsell-box h2 {
-      font-size: 2rem;
-      color: #a855f7;
-      margin-bottom: 1rem;
-    }
-
-    .upsell-box p {
-      color: #ccc;
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .upsell-box button {
-      background: #6a0dad;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #fff;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
-    }
-
-    .upsell-box button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.9);
-    }
-
-    footer {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      background: #0b0b14;
-      color: #aaa;
-    }
-
-    footer span {
-      color: #a855f7;
+    @media (hover:none),(pointer:coarse){ .btn:hover{ transform:none } }
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition:none }
+      .btn:hover{ box-shadow:0 10px 28px rgba(168,85,247,.45); filter:none; transform:none }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Thank You!</h1>
-    <p>Your SOP will be sent to your email shortly.</p>
-    <button class="cta-btn" onclick="window.location.href='index.html'">Return to Home</button>
-  </div>
+  <div class="wrap">
+    <!-- Topbar -->
+    <div class="topbar">
+      <a href="https://orynkitsop.netlify.app/#pricing" class="back">← Back to pricing</a>
+      <span class="badge" aria-hidden="true">OrynKit • Thank You</span>
+    </div>
 
-  <div class="upsell-box">
-    <h2>Want Unlimited SOPs?</h2>
-    <p>Upgrade to <strong>OrynKit – SOP Pro</strong> for just <strong>$59 lifetime</strong>.</p>
-    <a href='https://purplecovelabs.gumroad.com/l/mwcbq' target="_blank" class="cta-btn">Upgrade Now (Pre-Order)</a>
+    <!-- Thank You -->
+    <section class="hero card" aria-labelledby="ty-title">
+      <div class="ok" aria-hidden="true">
+        <!-- check icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+      <h1 id="ty-title">Thank you<br> — <br>Your SOP is on the way</h1>
+      <p class="note">We’ll email your SOP shortly. You’ll also get a confirmation email.</p>
+      <!-- Only this CTA here -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+        <a class="btn" href="https://tally.so/r/waqebb" target="_blank" rel="noopener">Request another SOP</a>
+      </div>
+    </section>
+
+    <!-- Next steps + Tips -->
+    <section class="grid">
+      <div class="card">
+        <h2 style="margin:0 0 8px">What happens next</h2>
+        <ul class="steps">
+          <li><span class="k">1</span> We process your request.</li>
+          <li><span class="k">2</span> OrynKit generates your SOP.</li>
+          <li><span class="k">3</span> We deliver it to your inbox.</li>
+        </ul>
+      </div>
+
+      <div class="tips">
+        <h3 style="margin:0 0 8px">Tips</h3>
+        <ul>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <!-- inbox/alert -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-width="2.2" d="M3 12l3-7h12l3 7v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6z"/>
+                <path stroke-width="2.2" d="M3 12h6l3 3 3-3h6"/>
+              </svg>
+            </span>
+            <span>If you don’t see it in a few minutes, check your <strong>Spam/Junk</strong> folder.</span>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <!-- contact/plus -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="9" cy="8" r="4" stroke-width="2.2"/>
+                <path stroke-width="2.2" d="M15 20c0-3.314-2.686-6-6-6s-6 2.686-6 6"/>
+                <path stroke-width="2.2" d="M17 8h6M20 5v6"/>
+              </svg>
+            </span>
+            <span>Add <a href="mailto:purplecoves@gmail.com">purplecoves@gmail.com</a> to your contacts.</span>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <!-- reply arrow -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-width="2.2" d="M10 8l-6 4 6 4V13h4a6 6 0 0 1 6 6v-1"/>
+              </svg>
+            </span>
+            <span>Reply to the email if you need tweaks—fastest way to get adjustments.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Upgrade options (kept) -->
+    <section class="card full" aria-labelledby="plans-title" style="margin-top:20px">
+      <h2 id="plans-title" style="margin:0 0 10px">Upgrade options</h2>
+      <div class="plans">
+        <!-- Starter -->
+        <div class="plan">
+          <div class="picon" aria-hidden="true">🚀</div>
+          <h3>Starter — $19.99</h3>
+          <p class="sub">More throughput + a PDF export.</p>
+          <ul class="flist">
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>10 SOPs total</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Priority processing</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Email delivery</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>1× PDF download</span>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://orynkitsopstarter.netlify.app/" target="_blank" rel="noopener">Get Starter</a>
+          </div>
+        </div>
+
+        <!-- Lifetime -->
+        <div class="plan">
+          <div class="picon" aria-hidden="true">👑</div>
+          <h3>Lifetime — $59.99</h3>
+          <p class="sub">Unlimited usage + perks. <strong>Limited seats</strong> • <strong>One-Time Deal</strong>.</p>
+          <ul class="flist">
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Unlimited SOPs</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Priority processing</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>PDF downloads</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Branded outputs</span><span class="soon-tag">Coming soon</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Notion/Sheets export</span><span class="soon-tag">Coming soon</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Early access to Oryn AI Agent Builder Kit</span><span class="soon-tag">Coming soon</span>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://orynkitsoplifepro.netlify.app/" target="_blank" rel="noopener">Get Lifetime</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Purple Cove Labs — Powered by OrynAI
+    </footer>
   </div>
-<!-- gumroad.com/l/mwcbq -->
-  <footer>
-    &copy; 2025 Purple Cove Labs – Powered by <span>OrynAI</span>
-  </footer>
 </body>
 </html>

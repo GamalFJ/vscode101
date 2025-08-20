@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "OrynKit",
+  "short_name": "OrynKit",
+  "description": "Generate ready-to-use SOPs with OrynKit.",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#120029",
+  "theme_color": "#120029",
+  "categories": ["productivity", "business"],
+  "icons": [
+    { "src": "./android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
