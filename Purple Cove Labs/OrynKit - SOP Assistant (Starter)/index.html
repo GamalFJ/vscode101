@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>OrynKit — Starter Plan</title>
+<meta name="description" content="OrynKit Starter: 10 SOPs, priority processing, email delivery, and 1x PDF download." />
+
+<!-- Favicons / PWA -->
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+<link rel="manifest" href="./assets/site.webmanifest">
+<meta name="msapplication-config" content="">
+<meta name="theme-color" content="#120029" />
+
+<style>
+  :root{
+    --bg:#120029; --ink:#EAD7FF; --muted:#c9b2ff;
+    --card:#1b0140; --line:rgba(192,132,252,.35);
+    --accent:#C084FC; --accent2:#A855F7; --ring:#7c3aed;
+    --ok:#14f195; --warn:#ffd28f; --danger:#ff7b7b;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(192,132,252,.25), transparent),
+                radial-gradient(1200px 700px at 100% 10%, rgba(168,85,247,.2), transparent),
+                var(--bg);
+    color:var(--ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; height:auto; display:block}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 140px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px; position:relative}
+  .back{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
+  .back:hover{filter:brightness(1.05)}
+  .brandbar{display:flex;align-items:center;gap:10px}
+  .brandbar img{height:150px;width:auto;display:block;border-radius:52px;margin:15px;}
+  @media (max-width:720px){ .brandbar img{height:60px;margin:10px;border-radius:18px} }
+  .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(192,132,252,.12);
+    border:1px solid var(--line); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px}
+
+  .hero{display:grid;gap:14px;place-items:center;text-align:center;margin:18px 0 26px}
+  .hero h1{font-size:42px;line-height:1.1;margin:6px 0 8px}
+  .note{color:var(--muted);font-size:14px;margin:6px 0 0;max-width:780px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;
+    box-shadow:0 16px 48px rgba(0,0,0,.25);padding:26px}
+  .grid{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+  .list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .list li{display:flex;gap:8px;align-items:flex-start}
+  .k{min-width:18px;text-align:center;font-weight:700}
+  .yes .k{color:var(--ok)}
+  .no .k{color:var(--danger)}
+  .soon .k{color:var(--warn)}
+
+  .cta{display:inline-block;text-decoration:none;text-align:center;
+    padding:14px 22px;border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#090016;border:1px solid rgba(234,215,255,.45);
+    box-shadow:0 10px 28px rgba(168,85,247,.45);
+    transition:.15s transform,.15s filter,.15s box-shadow}
+  .cta:hover{
+    transform:translateY(-1px);filter:brightness(1.05);
+    box-shadow:
+      0 0 0 2px rgba(234,215,255,.55),
+      0 0 32px rgba(168,85,247,.75),
+      0 14px 36px rgba(168,85,247,.55)
+  }
+  .cta:focus{outline:2px solid var(--ring);outline-offset:3px}
+
+  .steps{counter-reset:step; gap:26px}               /* more space between steps */
+  .steps li{counter-increment:step; padding:14px 0; line-height:1.6} /* looser line-height */
+  .steps li .k{background:rgba(192,132,252,.18);border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+  .steps li .k::before{content:counter(step)}
+  .center{display:flex;justify-content:center;margin-top:32px} /* centered CTA w/ larger top margin */
+
+  .faq details{background:rgba(192,132,252,.08);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .faq details[open]{background:rgba(192,132,252,.12)}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq p{color:var(--muted);margin:8px 0 0}
+
+  /* --- Upsell (Lifetime) --- */
+  .plans{display:grid;grid-template-columns:1fr;gap:14px}
+  .plan{background:rgba(192,132,252,.08);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .picon{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;
+    background:rgba(192,132,252,.16);border:1px solid var(--line);margin-bottom:8px;font-size:20px}
+  .plan h3{margin:0 0 4px}
+  .plan .sub{margin:0 0 12px;color:var(--muted);font-size:13px}
+  .flist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .frow{display:flex;gap:10px;align-items:center}
+  .frow svg{width:18px;height:18px}
+  .frow.yes svg{color:var(--ok)}
+  .frow.soon svg{color:var(--warn)}
+  .soon-tag{margin-left:8px;padding:2px 8px;border-radius:8px;font-size:12px;
+    color:var(--warn);background:rgba(255,210,143,.12);border:1px solid var(--line)}
+  .actions{display:flex;justify-content:center;margin-top:12px}
+
+  /* sticky status bar */
+  .buybar{position:fixed;left:0;right:0;bottom:0;background:rgba(18,0,41,.8);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);padding:10px 16px}
+  .buybar .inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between}
+  .buybar .price{font-size:22px;margin:0}
+  .buybar .sub{color:var(--muted);font-size:12px;margin:0}
+  .appicon{height:48px;width:48px;border-radius:6px;display:block}
+
+  /* mobile */
+  @media (max-width:900px){.hero h1{font-size:36px}}
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .wrap{padding-bottom:140px}
+  }
+  @media (hover:none),(pointer:coarse){ .cta:hover{transform:none} }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="https://orynkitsop.netlify.app//#pricing" class="back">Home Page</a>
+
+      <!-- CENTER BRAND -->
+      <div class="brandbar">
+        <img src="./assets/orynkit-logo-text.png" alt="OrynKit logo">
+      </div>
+
+      <span class="badge">OrynKit • Starter</span>
+    </div>
+
+    <section class="hero">
+      <h1>Welcome to OrynKit<br> • <br>SOP  Assistant (Starter)</h1>
+      <p class="note">
+        Your Starter Access is active — includes 10 SOPs, priority processing, email delivery, and <strong>1x PDF download</strong>.
+      </p>
+      <!-- open same page -->
+      <a class="cta" data-plan="starter" href="https://tally.so/r/waqebb">Open OrynKit</a>
+    </section>
+
+    <section class="grid">
+      <!-- What's included -->
+      <div class="card">
+        <h2 style="margin-top:0">What you get</h2>
+        <ul class="list">
+          <li class="yes"><span class="k">✅</span> Core SOP generation tailored to your request</li>
+          <li class="yes"><span class="k">✅</span> Email delivery to your inbox</li>
+          <li class="yes"><span class="k">✅</span> Priority processing</li>
+          <li class="yes"><span class="k">✅</span> <strong>1x PDF download</strong> of any generated SOP</li>
+        </ul>
+        <hr style="border:1px solid var(--line);margin:18px 0">
+        <h3 style="margin:0 0 10px">Not included</h3>
+        <ul class="list">
+          <li class="no"><span class="k">✖</span> Branded outputs</li>
+          <li class="no"><span class="k">✖</span> Notion/Sheets export</li>
+          <li class="no"><span class="k">✖</span> Early access perks</li>
+        </ul>
+        <p class="note" style="margin-top:16px">Need more? Go Lifetime for unlimited SOPs and early access perks.</p>
+      </div>
+
+      <!-- How it works -->
+      <div class="card">
+        <h2 style="margin-top:0">How it works</h2>
+        <ul class="list steps">
+          <li><span class="k"></span> Submit your request via the OrynKit form.</li>
+          <li><span class="k"></span> OrynKit generates the SOP and queues it with priority.</li>
+          <li><span class="k"></span> You receive it by email.</li>
+        </ul>
+        <div class="center">
+          <!-- open same page & centered with larger top margin -->
+          <a class="cta" data-plan="starter" href="https://tally.so/r/waqebb">Open OrynKit</a>
+        </div>
+        <p class="note" style="margin-top:10px">Questions? See FAQs below or reply to your SOP email.</p>
+      </div>
+    </section>
+
+    <!-- Lifetime Upsell (single card) -->
+    <section class="card" aria-labelledby="plans-title" style="margin-top:20px">
+      <h2 id="plans-title" style="margin:0 0 10px">Upgrade option</h2>
+      <div class="plans">
+        <div class="plan">
+          <div class="picon" aria-hidden="true">👑</div>
+          <h3>Lifetime — $59.99</h3>
+          <p class="sub">Unlimited usage + exports + perks. <strong>Limited seats</strong> • <strong>One-Time Deal</strong>.</p>
+          <ul class="flist" aria-label="Lifetime features">
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Unlimited SOPs</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>Priority processing</span>
+            </li>
+            <li class="frow yes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+              <span>PDF downloads</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Branded outputs</span><span class="soon-tag">Coming soon</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Notion/Sheets export</span><span class="soon-tag">Coming soon</span>
+            </li>
+            <li class="frow soon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="9" stroke-width="2.5"></circle>
+                <path d="M12 7v5l3 3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Early access to Oryn AI Agent Builder Kit</span><span class="soon-tag">Coming soon</span>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="cta" href="https://orynkitsoplifepro.netlify.app/" target="_blank" rel="noopener">Get Lifetime</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs (Starter) -->
+    <section class="faq" style="margin-top:26px;display:grid;gap:12px">
+      <details>
+        <summary>How do the 10 SOPs work?</summary>
+        <p>You can request up to 10 unique SOPs during your Starter access period. They’re processed with priority to land in your inbox faster.</p>
+      </details>
+      <details>
+        <summary>What about the 1x PDF download?</summary>
+        <p>You can export any one of your generated SOPs as a PDF. If you need multiple PDFs or branded/Notion exports, upgrade to Lifetime.</p>
+      </details>
+      <details>
+        <summary>Does Starter renew automatically?</summary>
+        <p>No. It’s a manual, one-time purchase. Renew when you need more SOPs—no lock-in.</p>
+      </details>
+      <details>
+        <summary>Can I switch to Lifetime later?</summary>
+        <p>Yes. You can upgrade to the Lifetime plan anytime for unlimited SOPs and early access perks.</p>
+      </details>
+    </section>
+
+    <!-- Footer with Purple Cove Labs logo -->
+    <footer style="margin-top:26px; padding:18px; text-align:center; color:var(--muted); border-top:1px solid var(--line)">
+      <img src="./assets/Purple_Cove_Labs_Transparent.png" alt="Purple Cove Labs" style="height:125px; margin:0 auto 8px; opacity:.95">
+      <div>© 2025 Purple Cove Labs — Powered by OrynAI</div>
+    </footer>
+
+  </div>
+
+  <!-- Sticky status bar -->
+  <div class="buybar">
+    <div class="inner">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="./assets/orynkit-logo-text.png" alt="OrynKit icon" class="appicon">
+        <div>
+          <p class="price" style="font-weight:800">Starter Access Active</p>
+          <p class="sub">10 SOPs • Priority • <strong>1x PDF download</strong></p>
+        </div>
+      </div>
+      <!-- open same page -->
+      <a class="cta" data-plan="starter" href="https://tally.so/r/waqebb">Open OrynKit</a>
+    </div>
+  </div>
+
+  <!-- (Optional) PWA service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .catch(err => console.warn('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
