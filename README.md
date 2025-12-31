@@ -18,6 +18,7 @@ Fun facts:
 - Stan Lee is my spiritual Grand-father
 - House Slytherin
 
+I am learning to code on Scrimba. Sign up and start coding today: https://scrimba.com/?via=u413b694
 
 <a href="https://roadmap.sh"><img src="https://roadmap.sh/card/wide/676f7bf670129741a8aca21c?variant=dark&roadmaps=ai-engineer" alt="roadmap.sh"/></a>
 
